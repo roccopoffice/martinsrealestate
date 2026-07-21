@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "account_id": "9d1ca5329918e495aa0b71c99de6369a",
+  "name": "martinsrealestate",
+  "main": "worker.js",
+  "compatibility_date": "2026-07-21",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash"
+  },
+  "vars": {
+    "SITE_URL": "https://martinsrealestate.com"
+  }
+}

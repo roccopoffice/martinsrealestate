@@ -1,0 +1,9 @@
+.git
+.gitignore
+node_modules
+.wrangler
+package.json
+package-lock.json
+wrangler.jsonc
+worker.js
+*.md
