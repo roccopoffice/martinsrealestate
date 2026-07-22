@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Buying and selling with Martins & Associates — Massachusetts, Rhode Island, and international referrals.">
-  <title>Buy &amp; Sell | Martins & Associates Real Estate</title>
+  <title data-i18n-title="meta.buySell.title">Buy &amp; Sell | Martins & Associates Real Estate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="page-buy-sell">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skipToContent">Skip to content</a>
 
   <header class="site-header site-header--luxury">
     <div class="wrap">
@@ -30,28 +30,53 @@
                     https://static.wixstatic.com/media/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png/v1/fill/w_400,h_212,al_c,q_85,enc_auto/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png 2x"
             width="200"
             height="106"
-            alt="Martins & Associates Real Estate">
-          <span class="visually-hidden">Martins &amp; Associates — home</span>
+            alt="Martins & Associates Real Estate"
+            data-i18n-alt="a11y.brandAlt">
+          <span class="visually-hidden" data-i18n="a11y.brandHome">Martins &amp; Associates — home</span>
         </a>
-        <nav class="nav-desktop" aria-label="Primary">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="book.html">Book online</a>
-          <a class="nav-link" href="buy-sell.html" aria-current="page">Buy &amp; Sell</a>
-          <a class="nav-link" href="renting.html">Renting</a>
-          <a class="nav-link" href="listings.html">Listings</a>
-          <a class="nav-link" href="about.html">About</a>
+        <nav class="nav-desktop" aria-label="Primary" data-i18n-aria="a11y.primaryNav">
+          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+          <a class="nav-link" href="book.html" data-i18n="nav.book">Book online</a>
+          <a class="nav-link" href="buy-sell.html" aria-current="page" data-i18n="nav.buySell">Buy &amp; Sell</a>
+          <a class="nav-link" href="renting.html" data-i18n="nav.renting">Renting</a>
+          <a class="nav-link" href="listings.html" data-i18n="nav.listings">Listings</a>
+          <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
         </nav>
-        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+        <div class="lang-switcher">
+          <label class="visually-hidden" for="lang-select-desktop" data-i18n="a11y.langSwitcher">Select language</label>
+          <select id="lang-select-desktop" class="lang-select" aria-label="Select language" data-i18n-aria="a11y.langSwitcher">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ht">Kreyòl Ayisyen</option>
+            <option value="kea">Kabuverdianu</option>
+            <option value="fr">Français</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu" data-i18n-aria="a11y.openMenu">
           <span></span><span></span><span></span>
         </button>
       </div>
-      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="book.html">Book online</a>
-        <a class="nav-link" href="buy-sell.html" aria-current="page">Buy &amp; Sell</a>
-        <a class="nav-link" href="renting.html">Renting</a>
-        <a class="nav-link" href="listings.html">Listings</a>
-        <a class="nav-link" href="about.html">About</a>
+      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile" data-i18n-aria="a11y.mobileNav">
+        <div class="lang-switcher">
+          <label class="visually-hidden" for="lang-select-mobile" data-i18n="a11y.langSwitcher">Select language</label>
+          <select id="lang-select-mobile" class="lang-select" aria-label="Select language" data-i18n-aria="a11y.langSwitcher">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ht">Kreyòl Ayisyen</option>
+            <option value="kea">Kabuverdianu</option>
+            <option value="fr">Français</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="nav-link" href="book.html" data-i18n="nav.book">Book online</a>
+        <a class="nav-link" href="buy-sell.html" aria-current="page" data-i18n="nav.buySell">Buy &amp; Sell</a>
+        <a class="nav-link" href="renting.html" data-i18n="nav.renting">Renting</a>
+        <a class="nav-link" href="listings.html" data-i18n="nav.listings">Listings</a>
+        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
       </nav>
     </div>
   </header>
@@ -62,18 +87,18 @@
         <div class="hero--luxury-split__panel">
           <div class="hero--luxury-split__glow" aria-hidden="true"></div>
           <div class="hero--luxury__inner hero--luxury-split__inner">
-            <p class="hero--luxury__eyebrow">Buy</p>
-            <h1 id="buy-intro-title">Buying with <em>confidence</em></h1>
-            <p class="hero--luxury__lead">
+            <p class="hero--luxury__eyebrow" data-i18n="buySell.buy.eyebrow">Buy</p>
+            <h1 id="buy-intro-title" data-i18n-html="buySell.buy.title">Buying with <em>confidence</em></h1>
+            <p class="hero--luxury__lead" data-i18n="buySell.buy.lead">
               Our team has the local knowledge and experience to guide you from search to closing—including financing introductions, negotiations, and paperwork. We also support buyers exploring property abroad through our overseas network.
             </p>
             <div class="hero--luxury__actions">
-              <a class="btn btn--gold" href="book.html#contact-form">Buyer consultation
+              <a class="btn btn--gold" href="book.html#contact-form" data-i18n="buySell.buy.ctaConsult">Buyer consultation
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a class="btn btn--outline-light" href="book.html">Book a showing</a>
+              <a class="btn btn--outline-light" href="book.html" data-i18n="cta.bookShowing">Book a showing</a>
             </div>
-            <a class="hero--luxury__scroll" href="#buying-steps">How it works <span class="hero--luxury__scroll-icon" aria-hidden="true">↓</span></a>
+            <a class="hero--luxury__scroll" href="#buying-steps"><span data-i18n="buySell.buy.scroll">How it works</span> <span class="hero--luxury__scroll-icon" aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="hero--luxury-split__visual">
@@ -81,6 +106,7 @@
             class="hero--luxury__img"
             src="https://images.unsplash.com/photo-1594348351748-5ce56416edc1?auto=format&amp;fit=crop&amp;w=1920&amp;q=88"
             alt="Colonial-style home with gray and white siding — typical Massachusetts neighborhood"
+            data-i18n-alt="buySell.buy.imgAlt"
             width="1920"
             height="1280"
             fetchpriority="high">
@@ -93,22 +119,22 @@
     <section class="process-steps-section process-steps-section--rail section-muted" id="buying-steps" aria-labelledby="buying-steps-heading">
       <div class="wrap">
         <div class="section-head">
-          <h2 id="buying-steps-heading" class="section-title">How buying works with us</h2>
-          <p class="section-sub">A clear path from first conversation to closing—so you always know what comes next.</p>
+          <h2 id="buying-steps-heading" class="section-title" data-i18n="buySell.buySteps.heading">How buying works with us</h2>
+          <p class="section-sub" data-i18n="buySell.buySteps.sub">A clear path from first conversation to closing—so you always know what comes next.</p>
         </div>
         <ol class="process-steps">
-          <li><strong>Consultation &amp; financing</strong> We align on budget, timeline, and neighborhoods, and help you connect with trusted lenders when you are ready to get pre-approved.</li>
-          <li><strong>Search &amp; showings</strong> You get listings that match your criteria, private tours, and honest feedback on value and condition.</li>
-          <li><strong>Offer &amp; negotiation</strong> We structure a competitive offer, negotiate terms, and explain contingencies in plain language.</li>
-          <li><strong>Inspections &amp; due diligence</strong> From home inspections to additional visits, we coordinate access and keep the deal on track.</li>
-          <li><strong>Mortgage &amp; legal</strong> We stay in sync with your lender and attorney so paperwork and deadlines do not slip.</li>
-          <li><strong>Closing</strong> Final walkthrough, signing, and keys—then we celebrate your new chapter.</li>
+          <li><strong data-i18n="buySell.buySteps.step1Strong">Consultation &amp; financing</strong> <span data-i18n="buySell.buySteps.step1Text">We align on budget, timeline, and neighborhoods, and help you connect with trusted lenders when you are ready to get pre-approved.</span></li>
+          <li><strong data-i18n="buySell.buySteps.step2Strong">Search &amp; showings</strong> <span data-i18n="buySell.buySteps.step2Text">You get listings that match your criteria, private tours, and honest feedback on value and condition.</span></li>
+          <li><strong data-i18n="buySell.buySteps.step3Strong">Offer &amp; negotiation</strong> <span data-i18n="buySell.buySteps.step3Text">We structure a competitive offer, negotiate terms, and explain contingencies in plain language.</span></li>
+          <li><strong data-i18n="buySell.buySteps.step4Strong">Inspections &amp; due diligence</strong> <span data-i18n="buySell.buySteps.step4Text">From home inspections to additional visits, we coordinate access and keep the deal on track.</span></li>
+          <li><strong data-i18n="buySell.buySteps.step5Strong">Mortgage &amp; legal</strong> <span data-i18n="buySell.buySteps.step5Text">We stay in sync with your lender and attorney so paperwork and deadlines do not slip.</span></li>
+          <li><strong data-i18n="buySell.buySteps.step6Strong">Closing</strong> <span data-i18n="buySell.buySteps.step6Text">Final walkthrough, signing, and keys—then we celebrate your new chapter.</span></li>
         </ol>
         <div class="process-cta-block">
-          <p>Have a specific town or property type in mind? Tell us what you are looking for and we will start the search with you.</p>
+          <p data-i18n="buySell.buySteps.ctaText">Have a specific town or property type in mind? Tell us what you are looking for and we will start the search with you.</p>
           <div class="hero-actions">
-            <a class="btn" href="book.html?service=general#contact-form">Start the conversation</a>
-            <a class="btn btn-ghost" href="about.html#team">Meet our agents</a>
+            <a class="btn" href="book.html?service=general#contact-form" data-i18n="buySell.buySteps.ctaStart">Start the conversation</a>
+            <a class="btn btn-ghost" href="about.html#team" data-i18n="cta.meetOurAgents">Meet our agents</a>
           </div>
         </div>
       </div>
@@ -119,18 +145,18 @@
         <div class="hero--luxury-split__panel">
           <div class="hero--luxury-split__glow" aria-hidden="true"></div>
           <div class="hero--luxury__inner hero--luxury-split__inner">
-            <p class="hero--luxury__eyebrow">Sell</p>
-            <h2 id="sell-intro-title" class="page-hero-title">Selling with <em>strategy</em></h2>
-            <p class="hero--luxury__lead">
+            <p class="hero--luxury__eyebrow" data-i18n="buySell.sell.eyebrow">Sell</p>
+            <h2 id="sell-intro-title" class="page-hero-title" data-i18n-html="buySell.sell.title">Selling with <em>strategy</em></h2>
+            <p class="hero--luxury__lead" data-i18n="buySell.sell.lead">
               We help you prepare, price, and market your home—and we work to maximize price and minimize time on market. Selling an international property? We coordinate with our referral partners so your listing gets the right exposure.
             </p>
             <div class="hero--luxury__actions">
-              <a class="btn btn--gold" href="book.html?service=general#contact-form">Listing strategy call
+              <a class="btn btn--gold" href="book.html?service=general#contact-form" data-i18n="buySell.sell.ctaCall">Listing strategy call
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a class="btn btn--outline-light" href="book.html#contact-form">Talk to a listing agent</a>
+              <a class="btn btn--outline-light" href="book.html#contact-form" data-i18n="buySell.sell.ctaAgent">Talk to a listing agent</a>
             </div>
-            <a class="hero--luxury__scroll" href="#selling-steps">Selling steps <span class="hero--luxury__scroll-icon" aria-hidden="true">↓</span></a>
+            <a class="hero--luxury__scroll" href="#selling-steps"><span data-i18n="buySell.sell.scroll">Selling steps</span> <span class="hero--luxury__scroll-icon" aria-hidden="true">↓</span></a>
           </div>
         </div>
         <div class="hero--luxury-split__visual">
@@ -138,6 +164,7 @@
             class="hero--luxury__img"
             src="https://images.unsplash.com/photo-1763909130798-7c38ff5e1c97?auto=format&amp;fit=crop&amp;w=1920&amp;q=88"
             alt="White home with front porch — classic Northeast curb appeal"
+            data-i18n-alt="buySell.sell.imgAlt"
             width="1920"
             height="1280"
             loading="lazy">
@@ -150,22 +177,22 @@
     <section class="process-steps-section section-muted" id="selling-steps" aria-labelledby="selling-steps-heading">
       <div class="wrap">
         <div class="section-head">
-          <h2 id="selling-steps-heading" class="section-title">How we sell your home</h2>
-          <p class="section-sub">A focused plan to prepare, price, and market your property so the right buyers see it at the right time.</p>
+          <h2 id="selling-steps-heading" class="section-title" data-i18n="buySell.sellSteps.heading">How we sell your home</h2>
+          <p class="section-sub" data-i18n="buySell.sellSteps.sub">A focused plan to prepare, price, and market your property so the right buyers see it at the right time.</p>
         </div>
         <ol class="process-steps">
-          <li><strong>Pricing &amp; strategy</strong> We review comparable sales, condition, and timing to set a price that attracts attention without leaving money on the table.</li>
-          <li><strong>Prep &amp; presentation</strong> From simple staging suggestions to contractor referrals, we help your home show at its best.</li>
-          <li><strong>Marketing &amp; exposure</strong> Professional photos, listings, and targeted outreach bring qualified buyers and serious offers.</li>
-          <li><strong>Showings &amp; feedback</strong> We coordinate tours, follow up with buyers’ agents, and adjust tactics as needed.</li>
-          <li><strong>Offers &amp; negotiation</strong> We compare offers with you, negotiate terms, and manage deadlines through inspection and financing.</li>
-          <li><strong>Closing</strong> We coordinate with your attorney and title company through a smooth transfer of ownership.</li>
+          <li><strong data-i18n="buySell.sellSteps.step1Strong">Pricing &amp; strategy</strong> <span data-i18n="buySell.sellSteps.step1Text">We review comparable sales, condition, and timing to set a price that attracts attention without leaving money on the table.</span></li>
+          <li><strong data-i18n="buySell.sellSteps.step2Strong">Prep &amp; presentation</strong> <span data-i18n="buySell.sellSteps.step2Text">From simple staging suggestions to contractor referrals, we help your home show at its best.</span></li>
+          <li><strong data-i18n="buySell.sellSteps.step3Strong">Marketing &amp; exposure</strong> <span data-i18n="buySell.sellSteps.step3Text">Professional photos, listings, and targeted outreach bring qualified buyers and serious offers.</span></li>
+          <li><strong data-i18n="buySell.sellSteps.step4Strong">Showings &amp; feedback</strong> <span data-i18n="buySell.sellSteps.step4Text">We coordinate tours, follow up with buyers’ agents, and adjust tactics as needed.</span></li>
+          <li><strong data-i18n="buySell.sellSteps.step5Strong">Offers &amp; negotiation</strong> <span data-i18n="buySell.sellSteps.step5Text">We compare offers with you, negotiate terms, and manage deadlines through inspection and financing.</span></li>
+          <li><strong data-i18n="buySell.sellSteps.step6Strong">Closing</strong> <span data-i18n="buySell.sellSteps.step6Text">We coordinate with your attorney and title company through a smooth transfer of ownership.</span></li>
         </ol>
         <div class="process-cta-block">
-          <p>Ready for a market snapshot? Request a listing strategy call—no obligation.</p>
+          <p data-i18n="buySell.sellSteps.ctaText">Ready for a market snapshot? Request a listing strategy call—no obligation.</p>
           <div class="hero-actions">
-            <a class="btn" href="book.html?service=general#contact-form">Schedule a call</a>
-            <a class="btn btn-ghost" href="about.html#team">Meet our agents</a>
+            <a class="btn" href="book.html?service=general#contact-form" data-i18n="buySell.sellSteps.ctaSchedule">Schedule a call</a>
+            <a class="btn btn-ghost" href="about.html#team" data-i18n="cta.meetOurAgents">Meet our agents</a>
           </div>
         </div>
       </div>
@@ -179,46 +206,49 @@
           <img
             src="https://static.wixstatic.com/media/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png/v1/fill/w_180,h_95,al_c,q_85,enc_auto/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png"
             alt="Martins & Associates"
+            data-i18n-alt="a11y.brandAlt"
             width="180"
             height="95"
             loading="lazy">
           <div class="name">MARTINS &amp; ASSOCIATES<span class="name-sub">REAL ESTATE</span></div>
-          <p>Massachusetts, Rhode Island &amp; international referrals.</p>
+          <p data-i18n="footer.tagline">Massachusetts, Rhode Island &amp; international referrals.</p>
         </div>
         <div class="footer-col">
-          <h4>Navigate</h4>
+          <h4 data-i18n="footer.navigate">Navigate</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="book.html">Book online</a></li>
-            <li><a href="buy-sell.html">Buy &amp; Sell</a></li>
-            <li><a href="renting.html">Renting</a></li>
-            <li><a href="listings.html">Listings</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="book.html" data-i18n="nav.book">Book online</a></li>
+            <li><a href="buy-sell.html" data-i18n="nav.buySell">Buy &amp; Sell</a></li>
+            <li><a href="renting.html" data-i18n="nav.renting">Renting</a></li>
+            <li><a href="listings.html" data-i18n="nav.listings">Listings</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
           </ul>
         </div>
         <div class="footer-col footer-social">
-          <h4>Follow Us!</h4>
+          <h4 data-i18n="footer.followUs">Follow Us!</h4>
           <ul class="social-icons" role="list">
-            <li><a href="https://www.instagram.com/martinsrealestate/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/e1aa082f7c0747168d9cf43e77046142.png" alt="" width="43" height="43" loading="lazy"></a></li>
-            <li><a href="https://www.facebook.com/p/Martins-Associates-Real-Estate-61550247932841/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/4057345bcf57474b96976284050c00df.png" alt="" width="43" height="43" loading="lazy"></a></li>
-            <li><a href="https://www.tiktok.com/@martinsrealestate" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="https://static.wixstatic.com/media/11062b_66167d61316d4665841f3397360d54a9~mv2.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/11062b_66167d61316d4665841f3397360d54a9~mv2.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.instagram.com/martinsrealestate/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-i18n-aria="a11y.instagram"><img src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/e1aa082f7c0747168d9cf43e77046142.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.facebook.com/p/Martins-Associates-Real-Estate-61550247932841/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-i18n-aria="a11y.facebook"><img src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/4057345bcf57474b96976284050c00df.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.tiktok.com/@martinsrealestate" target="_blank" rel="noopener noreferrer" aria-label="TikTok" data-i18n-aria="a11y.tiktok"><img src="https://static.wixstatic.com/media/11062b_66167d61316d4665841f3397360d54a9~mv2.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/11062b_66167d61316d4665841f3397360d54a9~mv2.png" alt="" width="43" height="43" loading="lazy"></a></li>
           </ul>
-          <p class="footer-note">Contact us to inquire today!</p>
+          <p class="footer-note" data-i18n="footer.contactNote">Contact us to inquire today!</p>
           <p style="margin:0;"><a href="tel:+15085836060">(508) 583-6060</a></p>
         </div>
       </div>
       <div class="footer-base">
-        <span>© 2003–2026 Martins &amp; Associates Real Estate. All rights reserved.</span>
-        <p class="footer-disclaimer">Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.</p>
+        <span data-i18n="footer.copyright">© 2003–2026 Martins &amp; Associates Real Estate. All rights reserved.</span>
+        <p class="footer-disclaimer" data-i18n="footer.disclaimer">Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.</p>
       </div>
     </div>
   </footer>
 
-  <div class="mobile-call-bar" role="navigation" aria-label="Quick call">
-    <a class="btn" href="tel:+15085836060">Call now</a>
-    <a class="btn btn-ghost" href="book.html#contact-form">Email us</a>
+  <div class="mobile-call-bar" role="navigation" aria-label="Quick call" data-i18n-aria="a11y.quickCall">
+    <a class="btn" href="tel:+15085836060" data-i18n="mobileBar.call">Call now</a>
+    <a class="btn btn-ghost" href="book.html#contact-form" data-i18n="mobileBar.email">Email us</a>
   </div>
 
+  <script src="i18n/translations.js" defer></script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>

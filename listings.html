@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Current property listings — Martins & Associates Real Estate.">
-  <title>Listings | Martins & Associates Real Estate</title>
+  <title data-i18n-title="meta.listings.title">Listings | Martins & Associates Real Estate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="page-listings">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skipToContent">Skip to content</a>
 
   <header class="site-header site-header--luxury">
     <div class="wrap">
@@ -30,28 +30,53 @@
                     https://static.wixstatic.com/media/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png/v1/fill/w_400,h_212,al_c,q_85,enc_auto/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png 2x"
             width="200"
             height="106"
-            alt="Martins & Associates Real Estate">
-          <span class="visually-hidden">Martins &amp; Associates — home</span>
+            alt="Martins & Associates Real Estate"
+            data-i18n-alt="a11y.brandAlt">
+          <span class="visually-hidden" data-i18n="a11y.brandHome">Martins &amp; Associates — home</span>
         </a>
-        <nav class="nav-desktop" aria-label="Primary">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="book.html">Book online</a>
-          <a class="nav-link" href="buy-sell.html">Buy &amp; Sell</a>
-          <a class="nav-link" href="renting.html">Renting</a>
-          <a class="nav-link" href="listings.html" aria-current="page">Listings</a>
-          <a class="nav-link" href="about.html">About</a>
+        <nav class="nav-desktop" aria-label="Primary" data-i18n-aria="a11y.primaryNav">
+          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+          <a class="nav-link" href="book.html" data-i18n="nav.book">Book online</a>
+          <a class="nav-link" href="buy-sell.html" data-i18n="nav.buySell">Buy &amp; Sell</a>
+          <a class="nav-link" href="renting.html" data-i18n="nav.renting">Renting</a>
+          <a class="nav-link" href="listings.html" aria-current="page" data-i18n="nav.listings">Listings</a>
+          <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
         </nav>
-        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+        <div class="lang-switcher">
+          <label class="visually-hidden" for="lang-select-desktop" data-i18n="a11y.langSwitcher">Select language</label>
+          <select id="lang-select-desktop" class="lang-select" aria-label="Select language" data-i18n-aria="a11y.langSwitcher">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ht">Kreyòl Ayisyen</option>
+            <option value="kea">Kabuverdianu</option>
+            <option value="fr">Français</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu" data-i18n-aria="a11y.openMenu">
           <span></span><span></span><span></span>
         </button>
       </div>
-      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="book.html">Book online</a>
-        <a class="nav-link" href="buy-sell.html">Buy &amp; Sell</a>
-        <a class="nav-link" href="renting.html">Renting</a>
-        <a class="nav-link" href="listings.html" aria-current="page">Listings</a>
-        <a class="nav-link" href="about.html">About</a>
+      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile" data-i18n-aria="a11y.mobileNav">
+        <div class="lang-switcher">
+          <label class="visually-hidden" for="lang-select-mobile" data-i18n="a11y.langSwitcher">Select language</label>
+          <select id="lang-select-mobile" class="lang-select" aria-label="Select language" data-i18n-aria="a11y.langSwitcher">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ht">Kreyòl Ayisyen</option>
+            <option value="kea">Kabuverdianu</option>
+            <option value="fr">Français</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="nav-link" href="book.html" data-i18n="nav.book">Book online</a>
+        <a class="nav-link" href="buy-sell.html" data-i18n="nav.buySell">Buy &amp; Sell</a>
+        <a class="nav-link" href="renting.html" data-i18n="nav.renting">Renting</a>
+        <a class="nav-link" href="listings.html" aria-current="page" data-i18n="nav.listings">Listings</a>
+        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
       </nav>
     </div>
   </header>
@@ -62,16 +87,16 @@
         <div class="hero--luxury-split__panel">
           <div class="hero--luxury-split__glow" aria-hidden="true"></div>
           <div class="hero--luxury__inner hero--luxury-split__inner">
-            <p class="hero--luxury__eyebrow">Properties</p>
-            <h1 id="listings-title">Homes on the <em>market</em></h1>
-            <p class="hero--luxury__lead">
+            <p class="hero--luxury__eyebrow" data-i18n="listings.hero.eyebrow">Properties</p>
+            <h1 id="listings-title" data-i18n-html="listings.hero.title">Homes on the <em>market</em></h1>
+            <p class="hero--luxury__lead" data-i18n="listings.hero.lead">
               Active listings and new inventory across the communities we serve. Tell us your goals and we will match you with what fits—or walk you through what is available now.
             </p>
             <div class="hero--luxury__actions">
-              <a class="btn btn--gold" href="book.html?service=general#contact-form">Ask about listings
+              <a class="btn btn--gold" href="book.html?service=general#contact-form"><span data-i18n="listings.hero.ctaAsk">Ask about listings</span>
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a class="btn btn--outline-light" href="#featured-listings">Browse listings</a>
+              <a class="btn btn--outline-light" href="#featured-listings" data-i18n="listings.hero.ctaBrowse">Browse listings</a>
             </div>
           </div>
         </div>
@@ -82,7 +107,8 @@
             alt="Residential homes in a Massachusetts neighborhood"
             width="1920"
             height="1280"
-            fetchpriority="high">
+            fetchpriority="high"
+            data-i18n-alt="listings.hero.imgAlt">
           <div class="hero--luxury-split__visual-overlay" aria-hidden="true"></div>
           <div class="hero--luxury-split__visual-edge" aria-hidden="true"></div>
         </div>
@@ -92,26 +118,26 @@
     <section id="featured-listings" class="listings-featured" aria-labelledby="featured-title">
       <div class="wrap">
         <div class="listings-featured__head">
-          <h2 id="featured-title" class="listings-featured__title">Featured listings</h2>
-          <p class="listings-featured__sub">Tap a card for the full listing—photos, facts, PDFs where available, and contact. Same layout you would expect on major search sites.</p>
+          <h2 id="featured-title" class="listings-featured__title" data-i18n="listings.featured.title">Featured listings</h2>
+          <p class="listings-featured__sub" data-i18n="listings.featured.sub">Tap a card for the full listing—photos, facts, PDFs where available, and contact. Same layout you would expect on major search sites.</p>
         </div>
         <ul class="listing-card-grid">
           <li>
             <a class="listing-card" href="listing-645-river-st-boston.html">
               <div class="listing-card__media">
-                <span class="listing-card__badge listing-card__badge--accent">Commercial</span>
-                <div class="listing-card__soon" aria-hidden="true"><span>Photos coming soon</span></div>
+                <span class="listing-card__badge listing-card__badge--accent" data-i18n="listings.card645.badge">Commercial</span>
+                <div class="listing-card__soon" aria-hidden="true"><span data-i18n="listings.card645.soon">Photos coming soon</span></div>
               </div>
               <div class="listing-card__body">
                 <p class="listing-card__price">$850,000</p>
                 <p class="listing-card__address">645 River St</p>
-                <p class="listing-card__city">Boston, MA 02136 · Hyde Park</p>
+                <p class="listing-card__city" data-i18n="listings.card645.city">Boston, MA 02136 · Hyde Park</p>
                 <div class="listing-card__meta">
-                  <span><strong>3,100</strong> sqft lot</span>
+                  <span><strong>3,100</strong> <span data-i18n="listing.sqftLot">sqft lot</span></span>
                   <span class="listing-card__meta-sep">·</span>
-                  <span><strong>0.07</strong> ac</span>
+                  <span><strong>0.07</strong> <span data-i18n="listings.card645.acres">ac</span></span>
                   <span class="listing-card__meta-sep">·</span>
-                  <span>Land / mixed-use</span>
+                  <span data-i18n="listings.card645.type">Land / mixed-use</span>
                 </div>
               </div>
             </a>
@@ -119,24 +145,25 @@
           <li>
             <a class="listing-card" href="listing-686-broadway-raynham.html">
               <div class="listing-card__media">
-                <span class="listing-card__badge listing-card__badge--accent">Business</span>
+                <span class="listing-card__badge listing-card__badge--accent" data-i18n="listings.card686.badge">Business</span>
                 <img
                   src="listings-assets/686-broadway-raynham/photo-02.jpeg"
                   alt="686 Broadway, Raynham — storefront and interior"
                   width="800"
                   height="600"
-                  loading="lazy">
+                  loading="lazy"
+                  data-i18n-alt="listings.card686.imgAlt">
               </div>
               <div class="listing-card__body">
                 <p class="listing-card__price">$149,900</p>
                 <p class="listing-card__address">686 Broadway</p>
-                <p class="listing-card__city">Raynham, MA 02767</p>
+                <p class="listing-card__city" data-i18n="listings.card686.city">Raynham, MA 02767</p>
                 <div class="listing-card__meta">
-                  <span><strong>9,999</strong> sqft lot</span>
+                  <span><strong>9,999</strong> <span data-i18n="listing.sqftLot">sqft lot</span></span>
                   <span class="listing-card__meta-sep">·</span>
-                  <span><strong>16</strong> parking</span>
+                  <span><strong>16</strong> <span data-i18n="listings.card686.parking">parking</span></span>
                   <span class="listing-card__meta-sep">·</span>
-                  <span>Retail / C1</span>
+                  <span data-i18n="listings.card686.type">Retail / C1</span>
                 </div>
               </div>
             </a>
@@ -155,44 +182,47 @@
             alt="Martins & Associates"
             width="180"
             height="95"
-            loading="lazy">
+            loading="lazy"
+            data-i18n-alt="a11y.brandAlt">
           <div class="name">MARTINS &amp; ASSOCIATES<span class="name-sub">REAL ESTATE</span></div>
-          <p>Massachusetts, Rhode Island &amp; international referrals.</p>
+          <p data-i18n="footer.tagline">Massachusetts, Rhode Island &amp; international referrals.</p>
         </div>
         <div class="footer-col">
-          <h4>Navigate</h4>
+          <h4 data-i18n="footer.navigate">Navigate</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="book.html">Book online</a></li>
-            <li><a href="buy-sell.html">Buy &amp; Sell</a></li>
-            <li><a href="renting.html">Renting</a></li>
-            <li><a href="listings.html">Listings</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="book.html" data-i18n="nav.book">Book online</a></li>
+            <li><a href="buy-sell.html" data-i18n="nav.buySell">Buy &amp; Sell</a></li>
+            <li><a href="renting.html" data-i18n="nav.renting">Renting</a></li>
+            <li><a href="listings.html" data-i18n="nav.listings">Listings</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
           </ul>
         </div>
         <div class="footer-col footer-social">
-          <h4>Follow Us!</h4>
+          <h4 data-i18n="footer.followUs">Follow Us!</h4>
           <ul class="social-icons" role="list">
-            <li><a href="https://www.instagram.com/martinsrealestate/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/e1aa082f7c0747168d9cf43e77046142.png" alt="" width="43" height="43" loading="lazy"></a></li>
-            <li><a href="https://www.facebook.com/p/Martins-Associates-Real-Estate-61550247932841/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/4057345bcf57474b96976284050c00df.png" alt="" width="43" height="43" loading="lazy"></a></li>
-            <li><a href="https://www.tiktok.com/@martinsrealestate" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="https://static.wixstatic.com/media/11062b_66167d61316d4665841f3397360d54a9~mv2.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/11062b_66167d61316d4665841f3397360d54a9~mv2.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.instagram.com/martinsrealestate/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-i18n-aria="a11y.instagram"><img src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/e1aa082f7c0747168d9cf43e77046142.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.facebook.com/p/Martins-Associates-Real-Estate-61550247932841/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-i18n-aria="a11y.facebook"><img src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/4057345bcf57474b96976284050c00df.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.tiktok.com/@martinsrealestate" target="_blank" rel="noopener noreferrer" aria-label="TikTok" data-i18n-aria="a11y.tiktok"><img src="https://static.wixstatic.com/media/11062b_66167d61316d4665841f3397360d54a9~mv2.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/11062b_66167d61316d4665841f3397360d54a9~mv2.png" alt="" width="43" height="43" loading="lazy"></a></li>
           </ul>
-          <p class="footer-note">Contact us to inquire today!</p>
+          <p class="footer-note" data-i18n="footer.contactNote">Contact us to inquire today!</p>
           <p style="margin:0;"><a href="tel:+15085836060">(508) 583-6060</a></p>
         </div>
       </div>
       <div class="footer-base">
-        <span>© 2003–2026 Martins &amp; Associates Real Estate. All rights reserved.</span>
-        <p class="footer-disclaimer">Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.</p>
+        <span data-i18n="footer.copyright">© 2003–2026 Martins &amp; Associates Real Estate. All rights reserved.</span>
+        <p class="footer-disclaimer" data-i18n="footer.disclaimer">Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.</p>
       </div>
     </div>
   </footer>
 
-  <div class="mobile-call-bar" role="navigation" aria-label="Quick call">
-    <a class="btn" href="tel:+15085836060">Call now</a>
-    <a class="btn btn-ghost" href="book.html#contact-form">Email us</a>
+  <div class="mobile-call-bar" role="navigation" aria-label="Quick call" data-i18n-aria="a11y.quickCall">
+    <a class="btn" href="tel:+15085836060" data-i18n="mobileBar.call">Call now</a>
+    <a class="btn btn-ghost" href="book.html#contact-form" data-i18n="mobileBar.email">Email us</a>
   </div>
 
+  <script src="i18n/translations.js" defer></script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>

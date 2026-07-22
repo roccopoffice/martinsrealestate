@@ -12,16 +12,32 @@
   var toggle = document.getElementById("nav-toggle");
   var mobile = document.getElementById("nav-mobile");
   if (toggle && mobile) {
+    function navLabel(openKey, closeKey, isOpen) {
+      var key = isOpen ? closeKey : openKey;
+      if (window.MartinsI18n && typeof window.MartinsI18n.t === "function") {
+        return window.MartinsI18n.t(key);
+      }
+      return isOpen ? "Close menu" : "Open menu";
+    }
+
     function setNavOpen(open) {
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.setAttribute("aria-label", navLabel("a11y.openMenu", "a11y.closeMenu", open));
       mobile.classList.toggle("open", open);
       document.body.classList.toggle("nav-open", open);
+      if (window.MartinsI18n && typeof window.MartinsI18n.apply === "function") {
+        window.MartinsI18n.apply(mobile);
+      }
     }
 
     toggle.addEventListener("click", function () {
       var open = toggle.getAttribute("aria-expanded") === "true";
       setNavOpen(!open);
+    });
+
+    document.addEventListener("martins:langchange", function () {
+      var isOpen = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-label", navLabel("a11y.openMenu", "a11y.closeMenu", isOpen));
     });
 
     mobile.querySelectorAll("a").forEach(function (a) {

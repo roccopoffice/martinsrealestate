@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Book property showings or send a message — Martins & Associates Real Estate.">
-  <title>Book online | Martins & Associates Real Estate</title>
+  <title data-i18n-title="meta.book.title">Book online | Martins & Associates Real Estate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="page-book">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skipToContent">Skip to content</a>
 
   <header class="site-header site-header--luxury">
     <div class="wrap">
@@ -30,28 +30,53 @@
                     https://static.wixstatic.com/media/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png/v1/fill/w_400,h_212,al_c,q_85,enc_auto/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png 2x"
             width="200"
             height="106"
-            alt="Martins & Associates Real Estate">
-          <span class="visually-hidden">Martins &amp; Associates — home</span>
+            alt="Martins & Associates Real Estate"
+            data-i18n-alt="a11y.brandAlt">
+          <span class="visually-hidden" data-i18n="a11y.brandHome">Martins &amp; Associates — home</span>
         </a>
-        <nav class="nav-desktop" aria-label="Primary">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="book.html" aria-current="page">Book online</a>
-          <a class="nav-link" href="buy-sell.html">Buy &amp; Sell</a>
-          <a class="nav-link" href="renting.html">Renting</a>
-          <a class="nav-link" href="listings.html">Listings</a>
-          <a class="nav-link" href="about.html">About</a>
+        <nav class="nav-desktop" aria-label="Primary" data-i18n-aria="a11y.primaryNav">
+          <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+          <a class="nav-link" href="book.html" aria-current="page" data-i18n="nav.book">Book online</a>
+          <a class="nav-link" href="buy-sell.html" data-i18n="nav.buySell">Buy &amp; Sell</a>
+          <a class="nav-link" href="renting.html" data-i18n="nav.renting">Renting</a>
+          <a class="nav-link" href="listings.html" data-i18n="nav.listings">Listings</a>
+          <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
         </nav>
+        <div class="lang-switcher">
+          <label class="visually-hidden" for="lang-select-desktop" data-i18n="a11y.langSwitcher">Select language</label>
+          <select id="lang-select-desktop" class="lang-select" aria-label="Select language" data-i18n-aria="a11y.langSwitcher">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ht">Kreyòl Ayisyen</option>
+            <option value="kea">Kabuverdianu</option>
+            <option value="fr">Français</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
         <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
       </div>
-      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="book.html" aria-current="page">Book online</a>
-        <a class="nav-link" href="buy-sell.html">Buy &amp; Sell</a>
-        <a class="nav-link" href="renting.html">Renting</a>
-        <a class="nav-link" href="listings.html">Listings</a>
-        <a class="nav-link" href="about.html">About</a>
+      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile" data-i18n-aria="a11y.mobileNav">
+        <div class="lang-switcher">
+          <label class="visually-hidden" for="lang-select-mobile" data-i18n="a11y.langSwitcher">Select language</label>
+          <select id="lang-select-mobile" class="lang-select" aria-label="Select language" data-i18n-aria="a11y.langSwitcher">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ht">Kreyòl Ayisyen</option>
+            <option value="kea">Kabuverdianu</option>
+            <option value="fr">Français</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="nav-link" href="book.html" aria-current="page" data-i18n="nav.book">Book online</a>
+        <a class="nav-link" href="buy-sell.html" data-i18n="nav.buySell">Buy &amp; Sell</a>
+        <a class="nav-link" href="renting.html" data-i18n="nav.renting">Renting</a>
+        <a class="nav-link" href="listings.html" data-i18n="nav.listings">Listings</a>
+        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
       </nav>
     </div>
   </header>
@@ -72,13 +97,13 @@
       <div class="hero--luxury__vignette" aria-hidden="true"></div>
       <div class="wrap hero--stack__inner">
         <div class="hero--luxury__inner">
-          <p class="hero--luxury__eyebrow">Book online</p>
-          <h1 id="book-page-title">Appointments tailored to <em>your</em> needs</h1>
-          <p class="hero--luxury__lead">
+          <p class="hero--luxury__eyebrow" data-i18n="nav.book">Book online</p>
+          <h1 id="book-page-title" data-i18n-html="book.hero.title">Appointments tailored to <em>your</em> needs</h1>
+          <p class="hero--luxury__lead" data-i18n="book.hero.lead">
             Request property showings or send a general message. We will confirm what works on our calendar.
           </p>
           <div class="hero--luxury__actions">
-            <a class="btn btn--gold" href="#contact-form">Send a message
+            <a class="btn btn--gold" href="#contact-form"><span data-i18n="book.hero.cta">Send a message</span>
               <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -89,9 +114,9 @@
     <section id="contact" class="section-muted section-muted--book" aria-labelledby="contact-heading">
       <div class="wrap contact-wrap">
         <div class="contact-aside">
-          <p class="section-eyebrow">Get in touch</p>
-          <h2 id="contact-heading" class="section-title">Send a message</h2>
-          <p>Tell us what you need — appointments, questions, or a general inquiry.</p>
+          <p class="section-eyebrow" data-i18n="book.contact.eyebrow">Get in touch</p>
+          <h2 id="contact-heading" class="section-title" data-i18n="book.contact.heading">Send a message</h2>
+          <p data-i18n="book.contact.intro">Tell us what you need — appointments, questions, or a general inquiry.</p>
           <ul class="contact-list">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -104,7 +129,7 @@
           </ul>
         </div>
         <div class="contact-panel" id="contact-form">
-          <p class="form-note form-success" id="form-success" hidden role="status">
+          <p class="form-note form-success" id="form-success" hidden role="status" data-i18n="book.form.success">
             Thanks — your message was sent. We’ll reply to you at the email you provided.
           </p>
           <form id="lead-form" class="contact-form" method="post" action="/api/contact" accept-charset="UTF-8">
@@ -112,38 +137,38 @@
             <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row two">
               <div>
-                <label for="name">Full name</label>
+                <label for="name" data-i18n="form.fullName">Full name</label>
                 <input id="name" name="name" type="text" autocomplete="name" required>
               </div>
               <div>
-                <label for="email">Email</label>
+                <label for="email" data-i18n="form.email">Email</label>
                 <input id="email" name="email" type="email" autocomplete="email" required>
               </div>
             </div>
             <div class="form-row two">
               <div>
-                <label for="phone">Phone</label>
+                <label for="phone" data-i18n="form.phone">Phone</label>
                 <input id="phone" name="phone" type="tel" autocomplete="tel">
               </div>
               <div>
-                <label for="service">Service</label>
+                <label for="service" data-i18n="form.service">Service</label>
                 <select id="service" name="service" required>
-                  <option value="">Select a service</option>
-                  <option value="showings">Property showings (~30 min)</option>
-                  <option value="general">General inquiry</option>
+                  <option value="" data-i18n="form.selectService">Select a service</option>
+                  <option value="showings" data-i18n="form.serviceShowings">Property showings (~30 min)</option>
+                  <option value="general" data-i18n="form.serviceGeneral">General inquiry</option>
                 </select>
               </div>
             </div>
             <div class="form-row">
               <div>
-                <label for="message">Message &amp; preferred times</label>
-                <textarea id="message" name="message" placeholder="Timeline, property address, and when you’re usually free."></textarea>
+                <label for="message" data-i18n="book.form.messageLabel">Message &amp; preferred times</label>
+                <textarea id="message" name="message" placeholder="Timeline, property address, and when you’re usually free." data-i18n-placeholder="book.form.messagePlaceholder"></textarea>
               </div>
             </div>
-            <button class="btn" type="submit">Send request</button>
+            <button class="btn" type="submit" data-i18n="book.form.sendRequest">Send request</button>
           </form>
           <div class="contact-direct">
-            <strong>Prefer to call?</strong><br>
+            <strong data-i18n="form.preferCall">Prefer to call?</strong><br>
             <a href="tel:+15085836060">(508) 583-6060</a> · <a href="mailto:martinsrealestate@msn.com">martinsrealestate@msn.com</a>
           </div>
         </div>
@@ -160,44 +185,47 @@
             alt="Martins & Associates"
             width="180"
             height="95"
-            loading="lazy">
+            loading="lazy"
+            data-i18n-alt="a11y.brandAlt">
           <div class="name">MARTINS &amp; ASSOCIATES<span class="name-sub">REAL ESTATE</span></div>
-          <p>Massachusetts, Rhode Island &amp; international referrals.</p>
+          <p data-i18n="footer.tagline">Massachusetts, Rhode Island &amp; international referrals.</p>
         </div>
         <div class="footer-col">
-          <h4>Navigate</h4>
+          <h4 data-i18n="footer.navigate">Navigate</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="book.html">Book online</a></li>
-            <li><a href="buy-sell.html">Buy &amp; Sell</a></li>
-            <li><a href="renting.html">Renting</a></li>
-            <li><a href="listings.html">Listings</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="book.html" data-i18n="nav.book">Book online</a></li>
+            <li><a href="buy-sell.html" data-i18n="nav.buySell">Buy &amp; Sell</a></li>
+            <li><a href="renting.html" data-i18n="nav.renting">Renting</a></li>
+            <li><a href="listings.html" data-i18n="nav.listings">Listings</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
           </ul>
         </div>
         <div class="footer-col footer-social">
-          <h4>Follow Us!</h4>
+          <h4 data-i18n="footer.followUs">Follow Us!</h4>
           <ul class="social-icons" role="list">
-            <li><a href="https://www.instagram.com/martinsrealestate/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/e1aa082f7c0747168d9cf43e77046142.png" alt="" width="43" height="43" loading="lazy"></a></li>
-            <li><a href="https://www.facebook.com/p/Martins-Associates-Real-Estate-61550247932841/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/4057345bcf57474b96976284050c00df.png" alt="" width="43" height="43" loading="lazy"></a></li>
-            <li><a href="https://www.tiktok.com/@martinsrealestate" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="https://static.wixstatic.com/media/11062b_66167d61316d4665841f3397360d54a9~mv2.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/11062b_66167d61316d4665841f3397360d54a9~mv2.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.instagram.com/martinsrealestate/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-i18n-aria="a11y.instagram"><img src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/e1aa082f7c0747168d9cf43e77046142.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.facebook.com/p/Martins-Associates-Real-Estate-61550247932841/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-i18n-aria="a11y.facebook"><img src="https://static.wixstatic.com/media/4057345bcf57474b96976284050c00df.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/4057345bcf57474b96976284050c00df.png" alt="" width="43" height="43" loading="lazy"></a></li>
+            <li><a href="https://www.tiktok.com/@martinsrealestate" target="_blank" rel="noopener noreferrer" aria-label="TikTok" data-i18n-aria="a11y.tiktok"><img src="https://static.wixstatic.com/media/11062b_66167d61316d4665841f3397360d54a9~mv2.png/v1/fill/w_43,h_43,al_c,q_85,enc_auto/11062b_66167d61316d4665841f3397360d54a9~mv2.png" alt="" width="43" height="43" loading="lazy"></a></li>
           </ul>
-          <p class="footer-note">Contact us to inquire today!</p>
+          <p class="footer-note" data-i18n="footer.contactNote">Contact us to inquire today!</p>
           <p style="margin:0;"><a href="tel:+15085836060">(508) 583-6060</a></p>
         </div>
       </div>
       <div class="footer-base">
-        <span>© 2003–2026 Martins &amp; Associates Real Estate. All rights reserved.</span>
-        <p class="footer-disclaimer">Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.</p>
+        <span data-i18n="footer.copyright">© 2003–2026 Martins &amp; Associates Real Estate. All rights reserved.</span>
+        <p class="footer-disclaimer" data-i18n="footer.disclaimer">Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.</p>
       </div>
     </div>
   </footer>
 
-  <div class="mobile-call-bar" role="navigation" aria-label="Quick call">
-    <a class="btn" href="tel:+15085836060">Call now</a>
-    <a class="btn btn-ghost" href="#contact-form">Email us</a>
+  <div class="mobile-call-bar" role="navigation" aria-label="Quick call" data-i18n-aria="a11y.quickCall">
+    <a class="btn" href="tel:+15085836060" data-i18n="mobileBar.call">Call now</a>
+    <a class="btn btn-ghost" href="#contact-form" data-i18n="mobileBar.email">Email us</a>
   </div>
 
+  <script src="i18n/translations.js" defer></script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>
