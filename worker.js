@@ -19,53 +19,61 @@ export default {
 };
 
 async function handleContact(request, env) {
-  const form = await request.formData();
-  const data = Object.fromEntries(form.entries());
+  try {
+    const form = await request.formData();
+    const data = Object.fromEntries(form.entries());
 
-  if (String(data._honey || "").trim()) {
+    if (String(data._honey || "").trim()) {
+      return redirectAfterSubmit(request, data);
+    }
+
+    const name = String(data.name || "").trim();
+    const email = String(data.email || "").trim();
+    const phone = String(data.phone || "").trim();
+    const message = String(data.message || "").trim();
+    const service = String(data.service || "").trim();
+    const property = String(data["Property address"] || data.property || "").trim();
+    const subject =
+      String(data._subject || "").trim() || "New inquiry — Martins & Associates website";
+
+    if (!name || !email || !email.includes("@")) {
+      return new Response("Name and a valid email are required.", { status: 400 });
+    }
+
+    const lines = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : null,
+      service ? `Service: ${service}` : null,
+      property ? `Property: ${property}` : null,
+      "",
+      message || "(No message provided)",
+    ].filter(Boolean);
+
+    const text = lines.join("\n");
+    const html = lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
+
+    if (!env.EMAIL?.send) {
+      return new Response("Email service is not configured.", { status: 503 });
+    }
+
+    await env.EMAIL.send({
+      to: CONTACT_TO,
+      from: { email: CONTACT_FROM, name: "Martins Real Estate Website" },
+      replyTo: email,
+      subject,
+      text,
+      html: `<div style="font-family:system-ui,sans-serif;line-height:1.5">${html}</div>`,
+    });
+
     return redirectAfterSubmit(request, data);
+  } catch (err) {
+    console.error("Contact form email failed:", err);
+    return new Response(
+      "We could not send your message right now. Please call (508) 583-6060 or email martinsrealestate@msn.com directly.",
+      { status: 500, headers: { "Content-Type": "text/plain; charset=utf-8" } }
+    );
   }
-
-  const name = String(data.name || "").trim();
-  const email = String(data.email || "").trim();
-  const phone = String(data.phone || "").trim();
-  const message = String(data.message || "").trim();
-  const service = String(data.service || "").trim();
-  const property = String(data["Property address"] || data.property || "").trim();
-  const subject =
-    String(data._subject || "").trim() || "New inquiry — Martins & Associates website";
-
-  if (!name || !email || !email.includes("@")) {
-    return new Response("Name and a valid email are required.", { status: 400 });
-  }
-
-  const lines = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    phone ? `Phone: ${phone}` : null,
-    service ? `Service: ${service}` : null,
-    property ? `Property: ${property}` : null,
-    "",
-    message || "(No message provided)",
-  ].filter(Boolean);
-
-  const text = lines.join("\n");
-  const html = lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("");
-
-  if (!env.EMAIL?.send) {
-    return new Response("Email service is not configured.", { status: 503 });
-  }
-
-  await env.EMAIL.send({
-    to: CONTACT_TO,
-    from: { email: CONTACT_FROM, name: "Martins Real Estate Website" },
-    replyTo: email,
-    subject,
-    text,
-    html: `<div style="font-family:system-ui,sans-serif;line-height:1.5">${html}</div>`,
-  });
-
-  return redirectAfterSubmit(request, data);
 }
 
 function redirectAfterSubmit(request, data) {

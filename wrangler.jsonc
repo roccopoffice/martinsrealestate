@@ -15,7 +15,8 @@
   "send_email": [
     {
       "name": "EMAIL",
-      "remote": true
+      "destination_address": "martinsrealestate@msn.com",
+      "allowed_sender_addresses": ["website@martinsrealestate.co"]
     }
   ]
 }
