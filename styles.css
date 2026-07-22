@@ -662,6 +662,14 @@
       margin: 0 0 1rem;
       opacity: 0.9;
     }
+    .form-success {
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      background: rgba(34, 120, 70, 0.12);
+      border: 1px solid rgba(34, 120, 70, 0.35);
+      color: #1f5f3f;
+      opacity: 1;
+    }
 
     .contact-direct {
       margin-top: 1.5rem;
