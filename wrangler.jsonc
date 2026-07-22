@@ -11,5 +11,11 @@
   },
   "vars": {
     "SITE_URL": "https://martinsrealestate.co"
-  }
+  },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "remote": true
+    }
+  ]
 }

@@ -74,20 +74,13 @@
     });
   }
 
-  document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function (formEl) {
+  document.querySelectorAll("form.contact-form").forEach(function (formEl) {
     if (!formEl.querySelector('input[name="_next"]')) {
       var next = document.createElement("input");
       next.type = "hidden";
       next.name = "_next";
       next.value = window.location.origin + window.location.pathname + "?sent=1";
       formEl.appendChild(next);
-    }
-    if (!formEl.querySelector('input[name="_captcha"]')) {
-      var captcha = document.createElement("input");
-      captcha.type = "hidden";
-      captcha.name = "_captcha";
-      captcha.value = "false";
-      formEl.appendChild(captcha);
     }
   });
 
