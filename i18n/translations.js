@@ -42,7 +42,8 @@
       followUs: "Follow Us!",
       contactNote: "Contact us to inquire today!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. All rights reserved.",
-      disclaimer: "Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed."
+      disclaimer: "Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.",
+      privacy: "Privacy Policy"
     },
     mobileBar: {
       call: "Call now",
@@ -100,7 +101,8 @@
       renting: { title: "Renting | Martins & Associates Real Estate" },
       listings: { title: "Listings | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Commercial redevelopment | Martins & Associates" },
-      listing686: { title: "686 Broadway, Raynham, MA | Business opportunity | Martins & Associates" }
+      listing686: { title: "686 Broadway, Raynham, MA | Business opportunity | Martins & Associates" },
+      privacy: { title: "Privacy Policy | Martins & Associates Real Estate" }
     },
     index: {
       hero: {
@@ -388,6 +390,44 @@
       disclaimer: "Information is deemed reliable but not guaranteed. Buyer to verify licenses, lease, financials, and permitted uses. MLS Property Information Network, Inc. data © 2026.",
       formMessagePlaceholder: "Tour request, questions, or best time to call.",
       galleryHeroAlt: "686 Broadway, Raynham — listing photo 1"
+    },
+    privacy: {
+      eyebrow: "Legal",
+      title: "Privacy Policy",
+      updated: "Last updated: September 16, 2026",
+      intro: "This Privacy Policy explains how Martins & Associates Real Estate (“we,” “us,” or “our”) collects, uses, and shares information when you visit this website or contact us through it.",
+      whoHeading: "Who we are",
+      whoBody: "Martins & Associates Real Estate is a residential brokerage licensed in Massachusetts and Rhode Island, based in Brockton, Massachusetts. You can reach us at <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> or <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      collectHeading: "Information we collect",
+      collectIntro: "When you use our contact or listing inquiry forms, we collect the details you submit, which may include:",
+      collectL1: "Your name",
+      collectL2: "Email address",
+      collectL3: "Phone number (optional)",
+      collectL4: "Your message, including preferred times or a property address",
+      collectL5: "The service you selected, such as a showing or a general inquiry",
+      collectAfter: "We also store your language preference in your browser’s local storage so the site can remember your choice. Our hosting provider (Cloudflare) and similar infrastructure may process technical data such as IP address, browser type, and request logs in order to deliver and secure the site. Fonts and images served by third parties (including Google Fonts and image hosts) may receive your IP address when your browser requests those files.",
+      useHeading: "How we use information",
+      useIntro: "We use the information you provide to:",
+      useL1: "Respond to inquiries and schedule showings or consultations",
+      useL2: "Communicate about listings and real estate services you asked about",
+      useL3: "Operate, secure, and improve this website",
+      useL4: "Meet legal, licensing, and professional recordkeeping obligations",
+      shareHeading: "How we share information",
+      shareBody: "We do not sell your personal information. We share it only with our agents and staff who need it to help you; with service providers who process form submissions and email (currently Cloudflare’s email service) so we can receive your message; when required by law or to protect our rights and clients; and with referral partners only if you ask us to connect you with them, such as for an international referral.",
+      cookiesHeading: "Cookies and similar technologies",
+      cookiesBody: "We do not use advertising or analytics cookies. We store your language choice in local storage on your device. You can clear this at any time in your browser settings.",
+      retainHeading: "How long we keep information",
+      retainBody: "Inquiry emails and related records are kept as long as needed to respond to you, provide real estate services, and meet recordkeeping, licensing, and legal requirements.",
+      rightsHeading: "Your choices",
+      rightsBody: "You may email us to ask what information we have about you, request a correction, or ask us to stop using your contact details for follow-up. We may still keep records we are required to keep. If you are a California resident, you may have additional rights under the CCPA/CPRA, including the right to know, delete, and opt out of the sale or sharing of personal information. We do not sell personal information.",
+      childrenHeading: "Children",
+      childrenBody: "This website is not directed to children under 13, and we do not knowingly collect personal information from children.",
+      securityHeading: "Security",
+      securityBody: "We take reasonable measures to protect information sent through this site, including transmitting form submissions over HTTPS. No method of transmission over the internet is completely secure.",
+      changesHeading: "Changes",
+      changesBody: "We may update this policy from time to time. When we do, we will change the “Last updated” date above.",
+      contactHeading: "Contact us",
+      contactBody: "Questions about this Privacy Policy? Email <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> or call <a href=\"tel:+15085836060\">(508) 583-6060</a>."
     }
   };
 
@@ -419,7 +459,8 @@
       followUs: "¡Síguenos!",
       contactNote: "¡Contáctenos hoy mismo!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Todos los derechos reservados.",
-      disclaimer: "Igualdad de Oportunidad de Vivienda. Licenciados en Massachusetts y Rhode Island. La información se considera confiable pero no está garantizada."
+      disclaimer: "Igualdad de Oportunidad de Vivienda. Licenciados en Massachusetts y Rhode Island. La información se considera confiable pero no está garantizada.",
+      privacy: "Política de privacidad"
     },
     mobileBar: { call: "Llamar ahora", email: "Escríbenos" },
     social: { followLabel: "Síguenos" },
@@ -468,7 +509,8 @@
       renting: { title: "Alquiler | Martins & Associates Real Estate" },
       listings: { title: "Propiedades | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Reurbanización comercial | Martins & Associates" },
-      listing686: { title: "686 Broadway, Raynham, MA | Oportunidad de negocio | Martins & Associates" }
+      listing686: { title: "686 Broadway, Raynham, MA | Oportunidad de negocio | Martins & Associates" },
+      privacy: { title: "Política de privacidad | Martins & Associates Real Estate" }
     },
     index: {
       hero: {
@@ -744,6 +786,44 @@
       disclaimer: "La información se considera confiable pero no está garantizada. El comprador debe verificar licencias, contrato de alquiler, finanzas y usos permitidos. Datos de MLS Property Information Network, Inc. © 2026.",
       formMessagePlaceholder: "Solicitud de recorrido, preguntas, o mejor horario para llamar.",
       galleryHeroAlt: "686 Broadway, Raynham — foto de listado 1"
+    },
+    privacy: {
+      eyebrow: "Legal",
+      title: "Política de privacidad",
+      updated: "Última actualización: 16 de septiembre de 2026",
+      intro: "Esta Política de privacidad explica cómo Martins & Associates Real Estate (“nosotros”) recopila, usa y comparte información cuando visita este sitio web o se comunica con nosotros a través de él.",
+      whoHeading: "Quiénes somos",
+      whoBody: "Martins & Associates Real Estate es una correduría residencial con licencia en Massachusetts y Rhode Island, con sede en Brockton, Massachusetts. Puede contactarnos en <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> o al <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      collectHeading: "Información que recopilamos",
+      collectIntro: "Cuando usa nuestros formularios de contacto o consulta de propiedades, recopilamos los datos que envía, que pueden incluir:",
+      collectL1: "Su nombre",
+      collectL2: "Correo electrónico",
+      collectL3: "Número de teléfono (opcional)",
+      collectL4: "Su mensaje, incluidos horarios preferidos o una dirección de propiedad",
+      collectL5: "El servicio que seleccionó, como una visita o una consulta general",
+      collectAfter: "También guardamos su preferencia de idioma en el almacenamiento local del navegador para que el sitio recuerde su elección. Nuestro proveedor de alojamiento (Cloudflare) e infraestructura similar pueden procesar datos técnicos como la dirección IP, el tipo de navegador y registros de solicitudes para entregar y proteger el sitio. Las fuentes e imágenes servidas por terceros (incluidos Google Fonts y anfitriones de imágenes) pueden recibir su dirección IP cuando el navegador solicita esos archivos.",
+      useHeading: "Cómo usamos la información",
+      useIntro: "Usamos la información que nos proporciona para:",
+      useL1: "Responder a consultas y programar visitas o consultas",
+      useL2: "Comunicarnos sobre propiedades y servicios inmobiliarios que solicitó",
+      useL3: "Operar, proteger y mejorar este sitio web",
+      useL4: "Cumplir obligaciones legales, de licencia y de conservación de registros profesionales",
+      shareHeading: "Cómo compartimos la información",
+      shareBody: "No vendemos su información personal. La compartimos solo con nuestros agentes y personal que la necesitan para ayudarle; con proveedores que procesan envíos de formularios y correo electrónico (actualmente el servicio de correo de Cloudflare) para recibir su mensaje; cuando lo exige la ley o para proteger nuestros derechos y los de nuestros clientes; y con socios de referidos solo si nos pide que le conectemos con ellos, por ejemplo para una referencia internacional.",
+      cookiesHeading: "Cookies y tecnologías similares",
+      cookiesBody: "No usamos cookies de publicidad ni de analítica. Guardamos su idioma en el almacenamiento local de su dispositivo. Puede borrar esto en cualquier momento en la configuración del navegador.",
+      retainHeading: "Cuánto tiempo conservamos la información",
+      retainBody: "Los correos de consulta y registros relacionados se conservan el tiempo necesario para responderle, prestar servicios inmobiliarios y cumplir requisitos de archivo, licencia y ley.",
+      rightsHeading: "Sus opciones",
+      rightsBody: "Puede escribirnos para preguntar qué información tenemos sobre usted, solicitar una corrección o pedirnos que dejemos de usar sus datos de contacto para seguimiento. Es posible que aún conservemos registros que debemos guardar. Si reside en California, puede tener derechos adicionales bajo la CCPA/CPRA, incluido el derecho a saber, eliminar y optar por no vender ni compartir información personal. No vendemos información personal.",
+      childrenHeading: "Menores",
+      childrenBody: "Este sitio web no está dirigido a menores de 13 años y no recopilamos a sabiendas información personal de menores.",
+      securityHeading: "Seguridad",
+      securityBody: "Tomamos medidas razonables para proteger la información enviada a través de este sitio, incluida la transmisión de formularios por HTTPS. Ningún método de transmisión por internet es completamente seguro.",
+      changesHeading: "Cambios",
+      changesBody: "Podemos actualizar esta política de vez en cuando. Cuando lo hagamos, cambiaremos la fecha de “Última actualización” que aparece arriba.",
+      contactHeading: "Contáctenos",
+      contactBody: "¿Preguntas sobre esta Política de privacidad? Escriba a <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> o llame al <a href=\"tel:+15085836060\">(508) 583-6060</a>."
     }
   };
 
@@ -775,7 +855,8 @@
       followUs: "Siga-nos!",
       contactNote: "Contate-nos hoje mesmo!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Todos os direitos reservados.",
-      disclaimer: "Igualdade de Oportunidade de Moradia. Licenciados em Massachusetts e Rhode Island. As informações são consideradas confiáveis, mas não garantidas."
+      disclaimer: "Igualdade de Oportunidade de Moradia. Licenciados em Massachusetts e Rhode Island. As informações são consideradas confiáveis, mas não garantidas.",
+      privacy: "Política de privacidade"
     },
     mobileBar: { call: "Ligar agora", email: "Envie um e-mail" },
     social: { followLabel: "Siga-nos" },
@@ -824,7 +905,8 @@
       renting: { title: "Aluguel | Martins & Associates Real Estate" },
       listings: { title: "Imóveis | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Reurbanização comercial | Martins & Associates" },
-      listing686: { title: "686 Broadway, Raynham, MA | Oportunidade de negócio | Martins & Associates" }
+      listing686: { title: "686 Broadway, Raynham, MA | Oportunidade de negócio | Martins & Associates" },
+      privacy: { title: "Política de privacidade | Martins & Associates Real Estate" }
     },
     index: {
       hero: {
@@ -1100,6 +1182,44 @@
       disclaimer: "As informações são consideradas confiáveis, mas não garantidas. O comprador deve verificar licenças, contrato de aluguel, finanças e usos permitidos. Dados da MLS Property Information Network, Inc. © 2026.",
       formMessagePlaceholder: "Solicitação de visita, perguntas, ou melhor horário para ligar.",
       galleryHeroAlt: "686 Broadway, Raynham — foto do anúncio 1"
+    },
+    privacy: {
+      eyebrow: "Legal",
+      title: "Política de privacidade",
+      updated: "Última atualização: 16 de setembro de 2026",
+      intro: "Esta Política de privacidade explica como a Martins & Associates Real Estate (“nós”) coleta, usa e compartilha informações quando você visita este site ou entra em contato conosco por meio dele.",
+      whoHeading: "Quem somos",
+      whoBody: "A Martins & Associates Real Estate é uma corretora residencial licenciada em Massachusetts e Rhode Island, com sede em Brockton, Massachusetts. Você pode falar conosco em <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou pelo <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      collectHeading: "Informações que coletamos",
+      collectIntro: "Quando você usa nossos formulários de contato ou consulta de imóveis, coletamos os dados que você envia, que podem incluir:",
+      collectL1: "Seu nome",
+      collectL2: "Endereço de e-mail",
+      collectL3: "Número de telefone (opcional)",
+      collectL4: "Sua mensagem, incluindo horários preferidos ou o endereço de um imóvel",
+      collectL5: "O serviço selecionado, como uma visita ou uma consulta geral",
+      collectAfter: "Também guardamos sua preferência de idioma no armazenamento local do navegador para que o site lembre sua escolha. Nosso provedor de hospedagem (Cloudflare) e infraestrutura semelhante podem processar dados técnicos como endereço IP, tipo de navegador e registros de solicitação para entregar e proteger o site. Fontes e imagens servidas por terceiros (incluindo Google Fonts e hosts de imagens) podem receber seu endereço IP quando o navegador solicita esses arquivos.",
+      useHeading: "Como usamos as informações",
+      useIntro: "Usamos as informações que você fornece para:",
+      useL1: "Responder a consultas e agendar visitas ou consultas",
+      useL2: "Comunicar sobre imóveis e serviços que você solicitou",
+      useL3: "Operar, proteger e melhorar este site",
+      useL4: "Cumprir obrigações legais, de licenciamento e de guarda de registros profissionais",
+      shareHeading: "Como compartilhamos as informações",
+      shareBody: "Não vendemos suas informações pessoais. Compartilhamos somente com nossos agentes e equipe que precisam delas para ajudá-lo; com prestadores que processam envios de formulários e e-mail (atualmente o serviço de e-mail da Cloudflare) para recebermos sua mensagem; quando exigido por lei ou para proteger nossos direitos e os de nossos clientes; e com parceiros de indicação somente se você pedir que o conectemos a eles, por exemplo para uma indicação internacional.",
+      cookiesHeading: "Cookies e tecnologias semelhantes",
+      cookiesBody: "Não usamos cookies de publicidade nem de análise. Guardamos sua escolha de idioma no armazenamento local do seu dispositivo. Você pode apagar isso a qualquer momento nas configurações do navegador.",
+      retainHeading: "Por quanto tempo guardamos as informações",
+      retainBody: "E-mails de consulta e registros relacionados são mantidos pelo tempo necessário para responder a você, prestar serviços imobiliários e cumprir requisitos de arquivo, licenciamento e lei.",
+      rightsHeading: "Suas escolhas",
+      rightsBody: "Você pode nos enviar um e-mail para perguntar quais informações temos sobre você, solicitar uma correção ou pedir que paremos de usar seus dados de contato para acompanhamento. Ainda podemos manter registros que somos obrigados a guardar. Se você for residente da Califórnia, pode ter direitos adicionais sob a CCPA/CPRA, incluindo o direito de saber, excluir e recusar a venda ou o compartilhamento de informações pessoais. Não vendemos informações pessoais.",
+      childrenHeading: "Crianças",
+      childrenBody: "Este site não é dirigido a crianças menores de 13 anos, e não coletamos intencionalmente informações pessoais de crianças.",
+      securityHeading: "Segurança",
+      securityBody: "Adotamos medidas razoáveis para proteger as informações enviadas por este site, inclusive transmitindo formulários por HTTPS. Nenhum método de transmissão pela internet é completamente seguro.",
+      changesHeading: "Alterações",
+      changesBody: "Podemos atualizar esta política de tempos em tempos. Quando o fizermos, alteraremos a data de “Última atualização” acima.",
+      contactHeading: "Fale conosco",
+      contactBody: "Dúvidas sobre esta Política de privacidade? Envie um e-mail para <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou ligue para <a href=\"tel:+15085836060\">(508) 583-6060</a>."
     }
   };
 
@@ -1131,7 +1251,8 @@
       followUs: "Suivez-nous !",
       contactNote: "Contactez-nous dès aujourd’hui !",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tous droits réservés.",
-      disclaimer: "Égalité d’accès au logement. Agréés au Massachusetts et à Rhode Island. Les informations sont jugées fiables mais non garanties."
+      disclaimer: "Égalité d’accès au logement. Agréés au Massachusetts et à Rhode Island. Les informations sont jugées fiables mais non garanties.",
+      privacy: "Politique de confidentialité"
     },
     mobileBar: { call: "Appeler", email: "Nous écrire" },
     social: { followLabel: "Suivez-nous" },
@@ -1180,7 +1301,8 @@
       renting: { title: "Location | Martins & Associates Real Estate" },
       listings: { title: "Annonces | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Réaménagement commercial | Martins & Associates" },
-      listing686: { title: "686 Broadway, Raynham, MA | Opportunité commerciale | Martins & Associates" }
+      listing686: { title: "686 Broadway, Raynham, MA | Opportunité commerciale | Martins & Associates" },
+      privacy: { title: "Politique de confidentialité | Martins & Associates Real Estate" }
     },
     index: {
       hero: {
@@ -1456,6 +1578,44 @@
       disclaimer: "Les informations sont jugées fiables mais non garanties. L’acheteur doit vérifier les licences, le bail, les finances et les usages autorisés. Données MLS Property Information Network, Inc. © 2026.",
       formMessagePlaceholder: "Demande de visite, questions, ou meilleur moment pour appeler.",
       galleryHeroAlt: "686 Broadway, Raynham — photo de l’annonce 1"
+    },
+    privacy: {
+      eyebrow: "Mentions légales",
+      title: "Politique de confidentialité",
+      updated: "Dernière mise à jour : 16 septembre 2026",
+      intro: "Cette politique de confidentialité explique comment Martins & Associates Real Estate (« nous ») recueille, utilise et partage des informations lorsque vous visitez ce site ou nous contactez par son intermédiaire.",
+      whoHeading: "Qui nous sommes",
+      whoBody: "Martins & Associates Real Estate est une agence résidentielle agréée au Massachusetts et à Rhode Island, basée à Brockton, Massachusetts. Vous pouvez nous joindre à <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou au <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      collectHeading: "Informations que nous collectons",
+      collectIntro: "Lorsque vous utilisez nos formulaires de contact ou de demande concernant une annonce, nous collectons les informations que vous envoyez, qui peuvent inclure :",
+      collectL1: "Votre nom",
+      collectL2: "Adresse e-mail",
+      collectL3: "Numéro de téléphone (facultatif)",
+      collectL4: "Votre message, y compris les créneaux préférés ou une adresse de bien",
+      collectL5: "Le service choisi, par exemple une visite ou une demande générale",
+      collectAfter: "Nous enregistrons aussi votre préférence de langue dans le stockage local du navigateur afin que le site s’en souvienne. Notre hébergeur (Cloudflare) et des infrastructures similaires peuvent traiter des données techniques telles que l’adresse IP, le type de navigateur et les journaux de requêtes pour diffuser et sécuriser le site. Les polices et images servies par des tiers (y compris Google Fonts et des hébergeurs d’images) peuvent recevoir votre adresse IP lorsque le navigateur demande ces fichiers.",
+      useHeading: "Comment nous utilisons les informations",
+      useIntro: "Nous utilisons les informations que vous fournissez pour :",
+      useL1: "Répondre aux demandes et planifier des visites ou des consultations",
+      useL2: "Communiquer au sujet des annonces et des services immobiliers que vous avez demandés",
+      useL3: "Exploiter, sécuriser et améliorer ce site",
+      useL4: "Respecter les obligations légales, d’agrément et de conservation des dossiers professionnels",
+      shareHeading: "Comment nous partageons les informations",
+      shareBody: "Nous ne vendons pas vos informations personnelles. Nous les partageons uniquement avec nos agents et notre personnel qui en ont besoin pour vous aider ; avec des prestataires qui traitent les formulaires et les e-mails (actuellement le service e-mail de Cloudflare) afin de recevoir votre message ; lorsque la loi l’exige ou pour protéger nos droits et ceux de nos clients ; et avec des partenaires de recommandation seulement si vous nous demandez de vous mettre en relation, par exemple pour une recommandation internationale.",
+      cookiesHeading: "Cookies et technologies similaires",
+      cookiesBody: "Nous n’utilisons pas de cookies publicitaires ni d’analyse. Nous enregistrons votre choix de langue dans le stockage local de votre appareil. Vous pouvez l’effacer à tout moment dans les paramètres du navigateur.",
+      retainHeading: "Durée de conservation",
+      retainBody: "Les e-mails de demande et les dossiers associés sont conservés aussi longtemps que nécessaire pour vous répondre, fournir des services immobiliers et respecter les exigences de conservation, d’agrément et de loi.",
+      rightsHeading: "Vos choix",
+      rightsBody: "Vous pouvez nous écrire pour demander quelles informations nous détenons, demander une correction, ou nous demander de cesser d’utiliser vos coordonnées pour le suivi. Nous pouvons toutefois conserver les dossiers que nous sommes tenus de garder. Si vous résidez en Californie, vous pouvez disposer de droits supplémentaires en vertu du CCPA/CPRA, notamment le droit de savoir, de supprimer et de refuser la vente ou le partage d’informations personnelles. Nous ne vendons pas d’informations personnelles.",
+      childrenHeading: "Enfants",
+      childrenBody: "Ce site ne s’adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment d’informations personnelles auprès d’enfants.",
+      securityHeading: "Sécurité",
+      securityBody: "Nous prenons des mesures raisonnables pour protéger les informations envoyées via ce site, notamment en transmettant les formulaires en HTTPS. Aucune méthode de transmission sur Internet n’est totalement sûre.",
+      changesHeading: "Modifications",
+      changesBody: "Nous pouvons mettre à jour cette politique de temps à autre. Dans ce cas, nous modifierons la date de « Dernière mise à jour » ci-dessus.",
+      contactHeading: "Nous contacter",
+      contactBody: "Des questions sur cette politique de confidentialité ? Écrivez à <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou appelez le <a href=\"tel:+15085836060\">(508) 583-6060</a>."
     }
   };
 
@@ -1487,7 +1647,8 @@
       followUs: "关注我们！",
       contactNote: "立即联系我们咨询！",
       copyright: "© 2003–2026 Martins & Associates 房地产。保留所有权利。",
-      disclaimer: "机会平等住房。已在马萨诸塞州和罗德岛获得执照。信息来源可靠，但不作担保。"
+      disclaimer: "机会平等住房。已在马萨诸塞州和罗德岛获得执照。信息来源可靠，但不作担保。",
+      privacy: "隐私政策"
     },
     mobileBar: { call: "立即致电", email: "给我们发邮件" },
     social: { followLabel: "关注我们" },
@@ -1536,7 +1697,8 @@
       renting: { title: "租房 | Martins & Associates 房地产" },
       listings: { title: "房源 | Martins & Associates 房地产" },
       listing645: { title: "645 River St, Boston, MA | 商业地产再开发 | Martins & Associates" },
-      listing686: { title: "686 Broadway, Raynham, MA | 商业机会 | Martins & Associates" }
+      listing686: { title: "686 Broadway, Raynham, MA | 商业机会 | Martins & Associates" },
+      privacy: { title: "隐私政策 | Martins & Associates 房地产" }
     },
     index: {
       hero: {
@@ -1812,6 +1974,44 @@
       disclaimer: "信息来源可靠，但不作担保。买方应自行核实营业执照、租约、财务状况及许可用途。数据来自 MLS Property Information Network, Inc. © 2026。",
       formMessagePlaceholder: "看房请求、问题，或方便致电的时间。",
       galleryHeroAlt: "686 Broadway, Raynham — 房源照片 1"
+    },
+    privacy: {
+      eyebrow: "法律信息",
+      title: "隐私政策",
+      updated: "最近更新日期：2026年9月16日",
+      intro: "本隐私政策说明 Martins & Associates Real Estate（“我们”）在您访问本网站或通过本网站与我们联系时如何收集、使用和共享信息。",
+      whoHeading: "我们是谁",
+      whoBody: "Martins & Associates Real Estate 是一家在马萨诸塞州和罗德岛持有执照的住宅经纪公司，总部位于马萨诸塞州布罗克顿。您可通过 <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> 或 <a href=\"tel:+15085836060\">(508) 583-6060</a> 联系我们。",
+      collectHeading: "我们收集的信息",
+      collectIntro: "当您使用联系表单或房源咨询表单时，我们会收集您提交的信息，其中可能包括：",
+      collectL1: "您的姓名",
+      collectL2: "电子邮箱",
+      collectL3: "电话号码（可选）",
+      collectL4: "您的留言，包括方便的时间或房产地址",
+      collectL5: "您选择的服务，例如看房或一般咨询",
+      collectAfter: "我们还会将您的语言偏好保存在浏览器的本地存储中，以便网站记住您的选择。我们的托管服务提供商（Cloudflare）及类似基础设施可能会处理 IP 地址、浏览器类型和请求日志等技术数据，以便提供并保护本网站。由第三方提供的字体和图片（包括 Google Fonts 和图片托管服务）可能在您的浏览器请求这些文件时收到您的 IP 地址。",
+      useHeading: "我们如何使用信息",
+      useIntro: "我们使用您提供的信息用于：",
+      useL1: "回复咨询并安排看房或会面",
+      useL2: "就您询问的房源和房地产服务与您沟通",
+      useL3: "运营、保护和改进本网站",
+      useL4: "履行法律、执照和专业存档义务",
+      shareHeading: "我们如何共享信息",
+      shareBody: "我们不会出售您的个人信息。我们仅与需要这些信息以便为您提供帮助的经纪人和员工共享；与处理表单提交和电子邮件的服务提供商（目前为 Cloudflare 电子邮件服务）共享，以便接收您的消息；在法律要求或为保护我们及客户的权利时共享；以及仅在您要求我们为您牵线时与推荐合作伙伴共享，例如国际推荐。",
+      cookiesHeading: "Cookie 及类似技术",
+      cookiesBody: "我们不使用广告或分析 Cookie。我们会将您的语言选择保存在设备的本地存储中。您可随时在浏览器设置中清除该信息。",
+      retainHeading: "我们保存信息的期限",
+      retainBody: "咨询邮件及相关记录会在回复您、提供房地产服务以及满足存档、执照和法律要求所需的期限内保存。",
+      rightsHeading: "您的选择",
+      rightsBody: "您可以发邮件询问我们持有哪些关于您的信息、请求更正，或要求我们停止使用您的联系方式进行跟进。我们仍可能保留依法必须保存的记录。如果您是加州居民，您可能享有 CCPA/CPRA 规定的额外权利，包括知情权、删除权以及拒绝出售或共享个人信息的权利。我们不出售个人信息。",
+      childrenHeading: "儿童",
+      childrenBody: "本网站不面向 13 岁以下儿童，我们也不会故意收集儿童的个人信息。",
+      securityHeading: "安全",
+      securityBody: "我们采取合理措施保护通过本网站发送的信息，包括通过 HTTPS 传输表单提交。任何互联网传输方式都无法做到完全安全。",
+      changesHeading: "变更",
+      changesBody: "我们可能会不时更新本政策。更新时，我们将更改上方的“最近更新日期”。",
+      contactHeading: "联系我们",
+      contactBody: "对本隐私政策有疑问？请发送邮件至 <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> 或致电 <a href=\"tel:+15085836060\">(508) 583-6060</a>。"
     }
   };
 
@@ -1843,7 +2043,8 @@
       followUs: "Swiv nou!",
       contactNote: "Kontakte nou jodi a pou nenpòt kesyon!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tout dwa rezève.",
-      disclaimer: "Egalite Opòtinite Lojman. Gen lisans nan Massachusetts ak Rhode Island. Enfòmasyon yo konsidere yo kòm serye men yo pa garanti."
+      disclaimer: "Egalite Opòtinite Lojman. Gen lisans nan Massachusetts ak Rhode Island. Enfòmasyon yo konsidere yo kòm serye men yo pa garanti.",
+      privacy: "Règleman sou vi prive"
     },
     mobileBar: { call: "Rele kounye a", email: "Ekri nou" },
     social: { followLabel: "Swiv nou" },
@@ -1892,7 +2093,8 @@
       renting: { title: "Lwaye | Martins & Associates Real Estate" },
       listings: { title: "Pwopriyete | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Re-devlopman komèsyal | Martins & Associates" },
-      listing686: { title: "686 Broadway, Raynham, MA | Opòtinite biznis | Martins & Associates" }
+      listing686: { title: "686 Broadway, Raynham, MA | Opòtinite biznis | Martins & Associates" },
+      privacy: { title: "Règleman sou vi prive | Martins & Associates Real Estate" }
     },
     index: {
       hero: {
@@ -2168,6 +2370,44 @@
       disclaimer: "Enfòmasyon yo konsidere yo kòm serye men yo pa garanti. Achtè dwe verifye lisans, kontra lwaye, finans, ak itilizasyon otorize. Done MLS Property Information Network, Inc. © 2026.",
       formMessagePlaceholder: "Demand vizit, kesyon, oswa pi bon lè pou rele.",
       galleryHeroAlt: "686 Broadway, Raynham — foto anons 1"
+    },
+    privacy: {
+      eyebrow: "Legal",
+      title: "Règleman sou vi prive",
+      updated: "Dènye aktyalizasyon: 16 septanm 2026",
+      intro: "Règleman sou vi prive sa a eksplike kijan Martins & Associates Real Estate (“nou”) ranmase, itilize, epi pataje enfòmasyon lè ou vizite sit entènèt sa a oswa ou kontakte nou atravè li.",
+      whoHeading: "Kiyès nou ye",
+      whoBody: "Martins & Associates Real Estate se yon ajans rezidansyèl ki gen lisans nan Massachusetts ak Rhode Island, ki baze nan Brockton, Massachusetts. Ou ka kontakte nou nan <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> oswa nan <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      collectHeading: "Enfòmasyon nou ranmase",
+      collectIntro: "Lè ou itilize fòm kontak oswa fòm kesyon sou yon pwopriyete, nou ranmase detay ou soumèt, ki ka gen ladan:",
+      collectL1: "Non ou",
+      collectL2: "Adrès imèl",
+      collectL3: "Nimewo telefòn (opsyonèl)",
+      collectL4: "Mesaj ou, ki gen ladan lè ou prefere oswa yon adrès pwopriyete",
+      collectL5: "Sèvis ou chwazi, tankou yon vizit oswa yon demand jeneral",
+      collectAfter: "Nou sove preferans lang ou nan depo lokal navigatè a tou pou sit la ka sonje chwa ou. Founisè hosting nou an (Cloudflare) ak enfrastrikti menm jan an ka trete done teknik tankou adrès IP, kalite navigatè, ak jounal demann pou delivre epi pwoteje sit la. Font ak imaj ke twazyèm pati sèvi (tankou Google Fonts ak sit ki kenbe imaj) ka resevwa adrès IP ou lè navigatè a mande fichye sa yo.",
+      useHeading: "Kijan nou itilize enfòmasyon yo",
+      useIntro: "Nou itilize enfòmasyon ou bay pou:",
+      useL1: "Reponn demann epi planifye vizit oswa konsiltasyon",
+      useL2: "Kominike sou pwopriyete ak sèvis imobilye ou te mande",
+      useL3: "Opere, pwoteje, epi amelyore sit entènèt sa a",
+      useL4: "Respekte obligasyon legal, lisans, ak arsivaj pwofesyonèl",
+      shareHeading: "Kijan nou pataje enfòmasyon yo",
+      shareBody: "Nou pa vann enfòmasyon pèsonèl ou. Nou pataje yo sèlman ak ajan nou yo ak anplwaye ki bezwen yo pou ede ou; ak founisè ki trete fòm yo ak imèl (kounye a sèvis imèl Cloudflare) pou nou ka resevwa mesaj ou; lè lalwa mande sa oswa pou pwoteje dwa nou ak dwa kliyan nou yo; epi ak patnè referans sèlman si ou mande nou mete ou an kontak ak yo, pa egzanp pou yon referans entènasyonal.",
+      cookiesHeading: "Cookies ak teknoloji menm jan an",
+      cookiesBody: "Nou pa itilize cookies piblisite ni analiz. Nou sove chwa lang ou nan depo lokal sou aparèy ou. Ou ka efase sa nenpòt lè nan paramèt navigatè ou.",
+      retainHeading: "Konbyen tan nou kenbe enfòmasyon yo",
+      retainBody: "Imèl demann ak dosye ki gen rapò yo kenbe toutotan sa nesesè pou reponn ou, bay sèvis imobilye, epi satisfè egzijans arsivaj, lisans, ak lalwa.",
+      rightsHeading: "Chwa ou yo",
+      rightsBody: "Ou ka voye nou yon imèl pou mande ki enfòmasyon nou genyen sou ou, mande yon korèksyon, oswa mande nou sispann itilize kontak ou pou swivi. Nou ka toujou kenbe dosye nou oblije kenbe. Si ou rete nan Kalifòni, ou ka gen dwa siplemantè anba CCPA/CPRA, tankou dwa pou konnen, efase, epi refize vann oswa pataje enfòmasyon pèsonèl. Nou pa vann enfòmasyon pèsonèl.",
+      childrenHeading: "Timoun",
+      childrenBody: "Sit entènèt sa a pa fèt pou timoun ki poko gen 13 an, epi nou pa ranmase enfòmasyon pèsonèl timoun yo espre.",
+      securityHeading: "Sekirite",
+      securityBody: "Nou pran mezi rezonab pou pwoteje enfòmasyon yo voye sou sit sa a, ki gen ladan transmèt fòm yo sou HTTPS. Okenn metòd transmisyon sou entènèt la pa konplètman an sekirite.",
+      changesHeading: "Chanjman",
+      changesBody: "Nou ka mete règleman sa a ajou de tan zan tan. Lè nou fè sa, n ap chanje dat “Dènye aktyalizasyon” ki anwo a.",
+      contactHeading: "Kontakte nou",
+      contactBody: "Kesyon sou Règleman sou vi prive sa a? Voye imèl nan <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> oswa rele <a href=\"tel:+15085836060\">(508) 583-6060</a>."
     }
   };
 
@@ -2199,7 +2439,8 @@
       followUs: "Sigi-nu!",
       contactNote: "Kontatu-nu oji pa xinta sabe mas!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tudu dretu rezervadu.",
-      disclaimer: "Igualdadi di Oportunidadi di Kasa. Ku lisensa na Massachusetts ku Rhode Island. Informason ta konsiderádu fiável má ka ta garantidu."
+      disclaimer: "Igualdadi di Oportunidadi di Kasa. Ku lisensa na Massachusetts ku Rhode Island. Informason ta konsiderádu fiável má ka ta garantidu.",
+      privacy: "Polítika di privacidadi"
     },
     mobileBar: { call: "Xama gora", email: "Manda-nu email" },
     social: { followLabel: "Sigi-nu" },
@@ -2248,7 +2489,8 @@
       renting: { title: "Aluga | Martins & Associates Real Estate" },
       listings: { title: "Imóveis | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Reurbanizason komersial | Martins & Associates" },
-      listing686: { title: "686 Broadway, Raynham, MA | Oportunidadi di negósiu | Martins & Associates" }
+      listing686: { title: "686 Broadway, Raynham, MA | Oportunidadi di negósiu | Martins & Associates" },
+      privacy: { title: "Polítika di privacidadi | Martins & Associates Real Estate" }
     },
     index: {
       hero: {
@@ -2524,6 +2766,44 @@
       disclaimer: "Informason ta konsiderádu fiável má ka ta garantidu. Kunpradoris debe verifika lisensa, kontratu, finansa, i usu permitidu. Dadus di MLS Property Information Network, Inc. © 2026.",
       formMessagePlaceholder: "Pedidu di vizita, pergunta, ô mijor óra pa xama.",
       galleryHeroAlt: "686 Broadway, Raynham — fotu di anúnsiu 1"
+    },
+    privacy: {
+      eyebrow: "Legal",
+      title: "Polítika di privacidadi",
+      updated: "Últimu atualizason: 16 di Setenbru 2026",
+      intro: "Kel Polítika di privacidadi ta splika modi ki Martins & Associates Real Estate (“nos”) ta kola, uza, i partilha informason ku bu vizita kel sitiu ô ku bu kontatu-nu pa el.",
+      whoHeading: "Ken nos é",
+      whoBody: "Martins & Associates Real Estate é un corretora rezidensial ku lisensa na Massachusetts ku Rhode Island, ku sede na Brockton, Massachusetts. Bu pode kontatu-nu na <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ô na <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      collectHeading: "Informason ki nos ta kola",
+      collectIntro: "Ku bu uza nos formuláriu di kontatu ô di pergunta sobri un imóvel, nos ta kola dadus ki bu manda, ki pode inklui:",
+      collectL1: "Bu nomi",
+      collectL2: "Enderesu di email",
+      collectL3: "Númeru di telefoni (opsional)",
+      collectL4: "Bu mensaji, inkluindu óra ki bu preferi ô un enderesu di imóvel",
+      collectL5: "Sérvisu ki bu skodje, sima un vizita ô un konsulta jeral",
+      collectAfter: "Nos ta guarda tanbé bu preferénsia di lingua na armazenamentu lokal di navegador pa sitiu lembra bu skodja. Nos provedor di hosting (Cloudflare) ku infraestrutura semejanti pode prosesa dadus tékniku sima enderesu IP, tipo di navegador, i rejistu di pedidu pa entrega i proteje sitiu. Fonti i imaji ki terseru ta sirbi (inkluindu Google Fonts ku anfitrion di imaji) pode rsebe bu enderesu IP ku navegador pidi kes ficheru.",
+      useHeading: "Modi ki nos ta uza informason",
+      useIntro: "Nos ta uza informason ki bu da pa:",
+      useL1: "Respondi pergunta i marka vizita ô konsulta",
+      useL2: "Komunika sobri imóveis i sérvisu di imobiliária ki bu pedi",
+      useL3: "Opera, proteje, i milhora kel sitiu",
+      useL4: "Kumpri obrigason legal, di lisensa, i di guarda di dokumentus profesional",
+      shareHeading: "Modi ki nos ta partilha informason",
+      shareBody: "Nos ka ta vende bu informason pesoal. Nos ta partilha-l so ku nos ajenti i ekipa ki mestê-l pa djuda-bu; ku provedoris ki ta prosesa formuláriu i email (atualmente sérvisu di email di Cloudflare) pa nos rsebe bu mensaji; ku lei ta esiji ô pa proteje nos dretu i dretu di nos klienti; i ku parseru di referénsia so si bu pedi-nu liga-bu ku es, sima pa un referénsia internasional.",
+      cookiesHeading: "Cookies ku teknolojia semejanti",
+      cookiesBody: "Nos ka ta uza cookies di publisidadi nen di análise. Nos ta guarda bu skodja di lingua na armazenamentu lokal di bu aparelhu. Bu pode apaga-l nunka ki bu kre na definison di navegador.",
+      retainHeading: "Kuantu tenpu nos ta guarda informason",
+      retainBody: "Email di pergunta ku rejistu relasionadu ta fika guardadu ku tempu nesesáriu pa respondi-bu, da sérvisu di imobiliária, i kumpri esijénsia di arquivo, lisensa, i lei.",
+      rightsHeading: "Bu skodjas",
+      rightsBody: "Bu pode manda-nu email pa pergunta kual informason nos ten sobri-bu, pedi un koréson, ô pedi-nu para di uza bu kontatu pa siguimentu. Nos pode inda guarda rejistu ki nos é obrigadu a guarda. Si bu é rezidenti di Kalifórnia, bu pode ten dretu adicional na CCPA/CPRA, inkluindu dretu di sabe, apaga, i recusa venda ô partilha di informason pesoal. Nos ka ta vende informason pesoal.",
+      childrenHeading: "Mininus",
+      childrenBody: "Kel sitiu ka sta dirijidu pa mininus ku menus di 13 anu, i nos ka ta kola informason pesoal di mininus ku konhesimentu.",
+      securityHeading: "Seguransa",
+      securityBody: "Nos ta toma medida razoável pa proteje informason mandadu pa kel sitiu, inkluindu transmite formuláriu pa HTTPS. Nhenhu métodu di transmison na internet é kompletamenti siguru.",
+      changesHeading: "Mudansas",
+      changesBody: "Nos pode atualiza kel polítika di ves en ves. Ku nos faze-l, nos ta muda data di “Últimu atualizason” riba.",
+      contactHeading: "Kontatu-nu",
+      contactBody: "Pergunta sobri kel Polítika di privacidadi? Manda email pa <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ô xama <a href=\"tel:+15085836060\">(508) 583-6060</a>."
     }
   };
 
