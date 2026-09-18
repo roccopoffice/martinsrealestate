@@ -128,7 +128,8 @@
 
           <section aria-labelledby="privacy-cookies">
             <h2 id="privacy-cookies" data-i18n="privacy.cookiesHeading">Cookies and similar technologies</h2>
-            <p data-i18n="privacy.cookiesBody">We do not use advertising or analytics cookies. We store your language choice in local storage on your device. You can clear this at any time in your browser settings.</p>
+            <p data-i18n="privacy.cookiesBody">We use essential storage to run the site, including your language preference and cookie choices. If you accept optional categories, we may also use analytics cookies and advertising cookies or pixels (for example Google Analytics or the Meta Pixel when those tools are enabled). A cookie banner lets you accept all, reject non-essential cookies, or choose categories. You can change this later with Cookie settings in the footer.</p>
+            <p data-i18n-html="privacy.cookiesHow">Manage your choices anytime with <button type="button" class="legal-text-button" data-open-cookie-settings>Cookie settings</button>.</p>
           </section>
 
           <section aria-labelledby="privacy-retain">
@@ -203,7 +204,10 @@
       </div>
       <div class="footer-base">
         <span data-i18n="footer.copyright">© 2003–2026 Martins &amp; Associates Real Estate. All rights reserved.</span>
-        <a class="footer-legal-link" href="privacy.html" aria-current="page" data-i18n="footer.privacy">Privacy Policy</a>
+        <nav class="footer-legal-links" aria-label="Legal" data-i18n-aria="a11y.legalNav">
+          <a class="footer-legal-link" href="privacy.html" aria-current="page" data-i18n="footer.privacy">Privacy Policy</a>
+          <button type="button" class="footer-legal-link" data-open-cookie-settings data-i18n="footer.cookieSettings">Cookie settings</button>
+        </nav>
         <p class="footer-disclaimer" data-i18n="footer.disclaimer">Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.</p>
       </div>
     </div>
@@ -217,5 +221,6 @@
   <script src="i18n/translations.js" defer></script>
   <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
+  <script src="consent.js" defer></script>
 </body>
 </html>

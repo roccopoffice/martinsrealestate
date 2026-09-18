@@ -34,7 +34,8 @@
       propertyPhotos: "Property photos",
       propertyFacts: "Property facts",
       listingSummary: "Listing summary",
-      langSwitcher: "Select language"
+      langSwitcher: "Select language",
+      legalNav: "Legal"
     },
     footer: {
       tagline: "Massachusetts, Rhode Island & international referrals.",
@@ -43,7 +44,8 @@
       contactNote: "Contact us to inquire today!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. All rights reserved.",
       disclaimer: "Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.",
-      privacy: "Privacy Policy"
+      privacy: "Privacy Policy",
+      cookieSettings: "Cookie settings"
     },
     mobileBar: {
       call: "Call now",
@@ -62,7 +64,8 @@
       serviceGeneral: "General inquiry",
       message: "Message",
       sendMessage: "Send message",
-      preferCall: "Prefer to call?"
+      preferCall: "Prefer to call?",
+      privacyNote: "By sending this form you agree to our <a href=\"privacy.html\">Privacy Policy</a>."
     },
     cta: {
       meetOurAgents: "Meet our agents",
@@ -415,7 +418,7 @@
       shareHeading: "How we share information",
       shareBody: "We do not sell your personal information. We share it only with our agents and staff who need it to help you; with service providers who process form submissions and email (currently Cloudflare’s email service) so we can receive your message; when required by law or to protect our rights and clients; and with referral partners only if you ask us to connect you with them, such as for an international referral.",
       cookiesHeading: "Cookies and similar technologies",
-      cookiesBody: "We do not use advertising or analytics cookies. We store your language choice in local storage on your device. You can clear this at any time in your browser settings.",
+      cookiesBody: "We use essential storage to run the site, including your language preference and cookie choices. If you accept optional categories, we may also use analytics cookies and advertising cookies or pixels (for example Google Analytics or the Meta Pixel when those tools are enabled). A cookie banner lets you accept all, reject non-essential cookies, or choose categories. You can change this later with Cookie settings in the footer.",
       retainHeading: "How long we keep information",
       retainBody: "Inquiry emails and related records are kept as long as needed to respond to you, provide real estate services, and meet recordkeeping, licensing, and legal requirements.",
       rightsHeading: "Your choices",
@@ -427,7 +430,26 @@
       changesHeading: "Changes",
       changesBody: "We may update this policy from time to time. When we do, we will change the “Last updated” date above.",
       contactHeading: "Contact us",
-      contactBody: "Questions about this Privacy Policy? Email <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> or call <a href=\"tel:+15085836060\">(508) 583-6060</a>."
+      contactBody: "Questions about this Privacy Policy? Email <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> or call <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      cookiesHow: "Manage your choices anytime with <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Cookie settings</button>.",
+    },
+    consent: {
+      title: "Cookies",
+      body: "We use essential cookies to run this site, including your language choice. With your permission we may also use analytics and advertising cookies. You can accept, reject, or choose categories. See our <a href=\"privacy.html\">Privacy Policy</a>.",
+      gpcNote: "Your browser sent a Global Privacy Control signal, so advertising cookies stay off.",
+      accept: "Accept all",
+      reject: "Reject non-essential",
+      settings: "Cookie settings",
+      settingsTitle: "Cookie settings",
+      settingsIntro: "Choose which optional cookies to allow. Essential cookies are always on. Details are in our <a href=\"privacy.html\">Privacy Policy</a>.",
+      necessary: "Essential",
+      necessaryHelp: "Needed for the site to work, including your language preference. Always on.",
+      analytics: "Analytics",
+      analyticsHelp: "Helps us understand how visitors use the site (Google Analytics, when enabled).",
+      advertising: "Advertising",
+      advertisingHelp: "Helps measure ads. Includes the Meta Pixel when enabled.",
+      save: "Save choices",
+      close: "Close"
     }
   };
 
@@ -451,7 +473,8 @@
       propertyPhotos: "Fotos de la propiedad",
       propertyFacts: "Datos de la propiedad",
       listingSummary: "Resumen de la propiedad",
-      langSwitcher: "Seleccionar idioma"
+      langSwitcher: "Seleccionar idioma",
+      legalNav: "Legal"
     },
     footer: {
       tagline: "Massachusetts, Rhode Island y referencias internacionales.",
@@ -460,7 +483,8 @@
       contactNote: "¡Contáctenos hoy mismo!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Todos los derechos reservados.",
       disclaimer: "Igualdad de Oportunidad de Vivienda. Licenciados en Massachusetts y Rhode Island. La información se considera confiable pero no está garantizada.",
-      privacy: "Política de privacidad"
+      privacy: "Política de privacidad",
+      cookieSettings: "Configuración de cookies"
     },
     mobileBar: { call: "Llamar ahora", email: "Escríbenos" },
     social: { followLabel: "Síguenos" },
@@ -474,7 +498,8 @@
       serviceGeneral: "Consulta general",
       message: "Mensaje",
       sendMessage: "Enviar mensaje",
-      preferCall: "¿Prefiere llamar?"
+      preferCall: "¿Prefiere llamar?",
+      privacyNote: "Al enviar este formulario acepta nuestra <a href=\"privacy.html\">Política de privacidad</a>."
     },
     cta: { meetOurAgents: "Conozca a nuestros agentes", bookShowing: "Reservar una visita", bookConsultation: "Reservar una consulta" },
     listing: {
@@ -811,7 +836,7 @@
       shareHeading: "Cómo compartimos la información",
       shareBody: "No vendemos su información personal. La compartimos solo con nuestros agentes y personal que la necesitan para ayudarle; con proveedores que procesan envíos de formularios y correo electrónico (actualmente el servicio de correo de Cloudflare) para recibir su mensaje; cuando lo exige la ley o para proteger nuestros derechos y los de nuestros clientes; y con socios de referidos solo si nos pide que le conectemos con ellos, por ejemplo para una referencia internacional.",
       cookiesHeading: "Cookies y tecnologías similares",
-      cookiesBody: "No usamos cookies de publicidad ni de analítica. Guardamos su idioma en el almacenamiento local de su dispositivo. Puede borrar esto en cualquier momento en la configuración del navegador.",
+      cookiesBody: "Usamos almacenamiento esencial para el sitio, incluida su preferencia de idioma y sus opciones de cookies. Si acepta categorías opcionales, también podemos usar cookies de analítica y cookies o píxeles de publicidad (por ejemplo Google Analytics o el píxel de Meta cuando esas herramientas estén habilitadas). Un aviso de cookies le permite aceptar todo, rechazar lo no esencial o elegir categorías. Puede cambiarlo después en Configuración de cookies en el pie de página.",
       retainHeading: "Cuánto tiempo conservamos la información",
       retainBody: "Los correos de consulta y registros relacionados se conservan el tiempo necesario para responderle, prestar servicios inmobiliarios y cumplir requisitos de archivo, licencia y ley.",
       rightsHeading: "Sus opciones",
@@ -823,7 +848,26 @@
       changesHeading: "Cambios",
       changesBody: "Podemos actualizar esta política de vez en cuando. Cuando lo hagamos, cambiaremos la fecha de “Última actualización” que aparece arriba.",
       contactHeading: "Contáctenos",
-      contactBody: "¿Preguntas sobre esta Política de privacidad? Escriba a <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> o llame al <a href=\"tel:+15085836060\">(508) 583-6060</a>."
+      contactBody: "¿Preguntas sobre esta Política de privacidad? Escriba a <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> o llame al <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      cookiesHow: "Gestione sus opciones en cualquier momento con <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Configuración de cookies</button>.",
+    },
+    consent: {
+      title: "Cookies",
+      body: "Usamos cookies esenciales para el sitio, incluido su idioma. Con su permiso también podemos usar cookies de analítica y publicidad. Puede aceptar, rechazar o elegir categorías. Consulte nuestra <a href=\"privacy.html\">Política de privacidad</a>.",
+      gpcNote: "Su navegador envió una señal de Control de privacidad global, por lo que las cookies publicitarias permanecen desactivadas.",
+      accept: "Aceptar todo",
+      reject: "Rechazar no esenciales",
+      settings: "Configuración de cookies",
+      settingsTitle: "Configuración de cookies",
+      settingsIntro: "Elija qué cookies opcionales permitir. Las esenciales siempre están activas. Los detalles están en nuestra <a href=\"privacy.html\">Política de privacidad</a>.",
+      necessary: "Esenciales",
+      necessaryHelp: "Necesarias para que el sitio funcione, incluida su preferencia de idioma. Siempre activas.",
+      analytics: "Analítica",
+      analyticsHelp: "Nos ayuda a entender cómo se usa el sitio (Google Analytics, cuando esté habilitado).",
+      advertising: "Publicidad",
+      advertisingHelp: "Ayuda a medir anuncios. Incluye el píxel de Meta cuando esté habilitado.",
+      save: "Guardar opciones",
+      close: "Cerrar"
     }
   };
 
@@ -847,7 +891,8 @@
       propertyPhotos: "Fotos do imóvel",
       propertyFacts: "Dados do imóvel",
       listingSummary: "Resumo do imóvel",
-      langSwitcher: "Selecionar idioma"
+      langSwitcher: "Selecionar idioma",
+      legalNav: "Legal"
     },
     footer: {
       tagline: "Massachusetts, Rhode Island e indicações internacionais.",
@@ -856,7 +901,8 @@
       contactNote: "Contate-nos hoje mesmo!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Todos os direitos reservados.",
       disclaimer: "Igualdade de Oportunidade de Moradia. Licenciados em Massachusetts e Rhode Island. As informações são consideradas confiáveis, mas não garantidas.",
-      privacy: "Política de privacidade"
+      privacy: "Política de privacidade",
+      cookieSettings: "Definições de cookies"
     },
     mobileBar: { call: "Ligar agora", email: "Envie um e-mail" },
     social: { followLabel: "Siga-nos" },
@@ -870,7 +916,8 @@
       serviceGeneral: "Consulta geral",
       message: "Mensagem",
       sendMessage: "Enviar mensagem",
-      preferCall: "Prefere ligar?"
+      preferCall: "Prefere ligar?",
+      privacyNote: "Ao enviar este formulário concorda com a nossa <a href=\"privacy.html\">Política de privacidade</a>."
     },
     cta: { meetOurAgents: "Conheça nossos agentes", bookShowing: "Agendar uma visita", bookConsultation: "Agendar uma consulta" },
     listing: {
@@ -1207,7 +1254,7 @@
       shareHeading: "Como compartilhamos as informações",
       shareBody: "Não vendemos suas informações pessoais. Compartilhamos somente com nossos agentes e equipe que precisam delas para ajudá-lo; com prestadores que processam envios de formulários e e-mail (atualmente o serviço de e-mail da Cloudflare) para recebermos sua mensagem; quando exigido por lei ou para proteger nossos direitos e os de nossos clientes; e com parceiros de indicação somente se você pedir que o conectemos a eles, por exemplo para uma indicação internacional.",
       cookiesHeading: "Cookies e tecnologias semelhantes",
-      cookiesBody: "Não usamos cookies de publicidade nem de análise. Guardamos sua escolha de idioma no armazenamento local do seu dispositivo. Você pode apagar isso a qualquer momento nas configurações do navegador.",
+      cookiesBody: "Usamos armazenamento essencial para o site, incluindo a sua preferência de idioma e as suas escolhas de cookies. Se aceitar categorias opcionais, também podemos usar cookies de análise e cookies ou pixels de publicidade (por exemplo Google Analytics ou o pixel da Meta quando essas ferramentas estiverem ativas). Um aviso de cookies permite aceitar tudo, recusar o não essencial ou escolher categorias. Pode alterar depois em Definições de cookies no rodapé.",
       retainHeading: "Por quanto tempo guardamos as informações",
       retainBody: "E-mails de consulta e registros relacionados são mantidos pelo tempo necessário para responder a você, prestar serviços imobiliários e cumprir requisitos de arquivo, licenciamento e lei.",
       rightsHeading: "Suas escolhas",
@@ -1219,7 +1266,26 @@
       changesHeading: "Alterações",
       changesBody: "Podemos atualizar esta política de tempos em tempos. Quando o fizermos, alteraremos a data de “Última atualização” acima.",
       contactHeading: "Fale conosco",
-      contactBody: "Dúvidas sobre esta Política de privacidade? Envie um e-mail para <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou ligue para <a href=\"tel:+15085836060\">(508) 583-6060</a>."
+      contactBody: "Dúvidas sobre esta Política de privacidade? Envie um e-mail para <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou ligue para <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      cookiesHow: "Faça a gestão das suas escolhas a qualquer momento com <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Definições de cookies</button>.",
+    },
+    consent: {
+      title: "Cookies",
+      body: "Usamos cookies essenciais para o site, incluindo o seu idioma. Com a sua permissão também podemos usar cookies de análise e publicidade. Pode aceitar, recusar ou escolher categorias. Consulte a nossa <a href=\"privacy.html\">Política de privacidade</a>.",
+      gpcNote: "O seu navegador enviou um sinal de Controlo Global de Privacidade, por isso os cookies de publicidade permanecem desligados.",
+      accept: "Aceitar tudo",
+      reject: "Recusar não essenciais",
+      settings: "Definições de cookies",
+      settingsTitle: "Definições de cookies",
+      settingsIntro: "Escolha quais cookies opcionais permitir. Os essenciais estão sempre ativos. Os detalhes estão na nossa <a href=\"privacy.html\">Política de privacidade</a>.",
+      necessary: "Essenciais",
+      necessaryHelp: "Necessários para o site funcionar, incluindo a preferência de idioma. Sempre ativos.",
+      analytics: "Análise",
+      analyticsHelp: "Ajuda-nos a perceber como os visitantes usam o site (Google Analytics, quando ativado).",
+      advertising: "Publicidade",
+      advertisingHelp: "Ajuda a medir anúncios. Inclui o pixel da Meta quando ativado.",
+      save: "Guardar escolhas",
+      close: "Fechar"
     }
   };
 
@@ -1243,7 +1309,8 @@
       propertyPhotos: "Photos du bien",
       propertyFacts: "Caractéristiques du bien",
       listingSummary: "Résumé de l’annonce",
-      langSwitcher: "Choisir la langue"
+      langSwitcher: "Choisir la langue",
+      legalNav: "Mentions légales"
     },
     footer: {
       tagline: "Massachusetts, Rhode Island et références internationales.",
@@ -1252,7 +1319,8 @@
       contactNote: "Contactez-nous dès aujourd’hui !",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tous droits réservés.",
       disclaimer: "Égalité d’accès au logement. Agréés au Massachusetts et à Rhode Island. Les informations sont jugées fiables mais non garanties.",
-      privacy: "Politique de confidentialité"
+      privacy: "Politique de confidentialité",
+      cookieSettings: "Paramètres des cookies"
     },
     mobileBar: { call: "Appeler", email: "Nous écrire" },
     social: { followLabel: "Suivez-nous" },
@@ -1266,7 +1334,8 @@
       serviceGeneral: "Demande générale",
       message: "Message",
       sendMessage: "Envoyer le message",
-      preferCall: "Vous préférez appeler ?"
+      preferCall: "Vous préférez appeler ?",
+      privacyNote: "En envoyant ce formulaire, vous acceptez notre <a href=\"privacy.html\">Politique de confidentialité</a>."
     },
     cta: { meetOurAgents: "Rencontrer nos agents", bookShowing: "Réserver une visite", bookConsultation: "Réserver une consultation" },
     listing: {
@@ -1603,7 +1672,7 @@
       shareHeading: "Comment nous partageons les informations",
       shareBody: "Nous ne vendons pas vos informations personnelles. Nous les partageons uniquement avec nos agents et notre personnel qui en ont besoin pour vous aider ; avec des prestataires qui traitent les formulaires et les e-mails (actuellement le service e-mail de Cloudflare) afin de recevoir votre message ; lorsque la loi l’exige ou pour protéger nos droits et ceux de nos clients ; et avec des partenaires de recommandation seulement si vous nous demandez de vous mettre en relation, par exemple pour une recommandation internationale.",
       cookiesHeading: "Cookies et technologies similaires",
-      cookiesBody: "Nous n’utilisons pas de cookies publicitaires ni d’analyse. Nous enregistrons votre choix de langue dans le stockage local de votre appareil. Vous pouvez l’effacer à tout moment dans les paramètres du navigateur.",
+      cookiesBody: "Nous utilisons un stockage essentiel pour le site, y compris votre langue et vos choix de cookies. Si vous acceptez des catégories facultatives, nous pouvons aussi utiliser des cookies d’analytique et des cookies ou pixels publicitaires (par exemple Google Analytics ou le pixel Meta lorsque ces outils sont activés). Une bannière vous permet d’accepter tout, de refuser les non essentiels ou de choisir les catégories. Vous pouvez modifier cela plus tard via Paramètres des cookies dans le pied de page.",
       retainHeading: "Durée de conservation",
       retainBody: "Les e-mails de demande et les dossiers associés sont conservés aussi longtemps que nécessaire pour vous répondre, fournir des services immobiliers et respecter les exigences de conservation, d’agrément et de loi.",
       rightsHeading: "Vos choix",
@@ -1615,7 +1684,26 @@
       changesHeading: "Modifications",
       changesBody: "Nous pouvons mettre à jour cette politique de temps à autre. Dans ce cas, nous modifierons la date de « Dernière mise à jour » ci-dessus.",
       contactHeading: "Nous contacter",
-      contactBody: "Des questions sur cette politique de confidentialité ? Écrivez à <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou appelez le <a href=\"tel:+15085836060\">(508) 583-6060</a>."
+      contactBody: "Des questions sur cette politique de confidentialité ? Écrivez à <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou appelez le <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      cookiesHow: "Gérez vos choix à tout moment avec <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Paramètres des cookies</button>.",
+    },
+    consent: {
+      title: "Cookies",
+      body: "Nous utilisons des cookies essentiels pour le site, y compris votre langue. Avec votre permission, nous pouvons aussi utiliser des cookies d’analytique et de publicité. Vous pouvez accepter, refuser ou choisir les catégories. Voir notre <a href=\"privacy.html\">Politique de confidentialité</a>.",
+      gpcNote: "Votre navigateur a envoyé un signal Global Privacy Control ; les cookies publicitaires restent donc désactivés.",
+      accept: "Tout accepter",
+      reject: "Refuser les non essentiels",
+      settings: "Paramètres des cookies",
+      settingsTitle: "Paramètres des cookies",
+      settingsIntro: "Choisissez les cookies facultatifs à autoriser. Les cookies essentiels restent toujours actifs. Les détails figurent dans notre <a href=\"privacy.html\">Politique de confidentialité</a>.",
+      necessary: "Essentiels",
+      necessaryHelp: "Nécessaires au fonctionnement du site, y compris votre langue. Toujours activés.",
+      analytics: "Analytique",
+      analyticsHelp: "Nous aide à comprendre l’utilisation du site (Google Analytics, lorsqu’il est activé).",
+      advertising: "Publicité",
+      advertisingHelp: "Aide à mesurer les publicités. Inclut le pixel Meta lorsqu’il est activé.",
+      save: "Enregistrer",
+      close: "Fermer"
     }
   };
 
@@ -1639,7 +1727,8 @@
       propertyPhotos: "房源照片",
       propertyFacts: "房源信息",
       listingSummary: "房源摘要",
-      langSwitcher: "选择语言"
+      langSwitcher: "选择语言",
+      legalNav: "法律信息"
     },
     footer: {
       tagline: "服务于马萨诸塞州、罗德岛及国际客户推荐。",
@@ -1648,7 +1737,8 @@
       contactNote: "立即联系我们咨询！",
       copyright: "© 2003–2026 Martins & Associates 房地产。保留所有权利。",
       disclaimer: "机会平等住房。已在马萨诸塞州和罗德岛获得执照。信息来源可靠，但不作担保。",
-      privacy: "隐私政策"
+      privacy: "隐私政策",
+      cookieSettings: "Cookie 设置"
     },
     mobileBar: { call: "立即致电", email: "给我们发邮件" },
     social: { followLabel: "关注我们" },
@@ -1662,7 +1752,8 @@
       serviceGeneral: "一般咨询",
       message: "留言",
       sendMessage: "发送留言",
-      preferCall: "更倾向于电话联系？"
+      preferCall: "更倾向于电话联系？",
+      privacyNote: "提交此表单即表示您同意我们的<a href=\"privacy.html\">隐私政策</a>。"
     },
     cta: { meetOurAgents: "认识我们的经纪人", bookShowing: "预约看房", bookConsultation: "预约咨询" },
     listing: {
@@ -1999,7 +2090,7 @@
       shareHeading: "我们如何共享信息",
       shareBody: "我们不会出售您的个人信息。我们仅与需要这些信息以便为您提供帮助的经纪人和员工共享；与处理表单提交和电子邮件的服务提供商（目前为 Cloudflare 电子邮件服务）共享，以便接收您的消息；在法律要求或为保护我们及客户的权利时共享；以及仅在您要求我们为您牵线时与推荐合作伙伴共享，例如国际推荐。",
       cookiesHeading: "Cookie 及类似技术",
-      cookiesBody: "我们不使用广告或分析 Cookie。我们会将您的语言选择保存在设备的本地存储中。您可随时在浏览器设置中清除该信息。",
+      cookiesBody: "我们使用必要存储来运行网站，包括您的语言偏好和 Cookie 选择。如果您接受可选类别，我们还可能使用分析 Cookie 以及广告 Cookie 或像素（例如在启用时使用 Google Analytics 或 Meta 像素）。Cookie 横幅可让您全部接受、拒绝非必要项或选择类别。之后可在页脚的 Cookie 设置中更改。",
       retainHeading: "我们保存信息的期限",
       retainBody: "咨询邮件及相关记录会在回复您、提供房地产服务以及满足存档、执照和法律要求所需的期限内保存。",
       rightsHeading: "您的选择",
@@ -2011,7 +2102,26 @@
       changesHeading: "变更",
       changesBody: "我们可能会不时更新本政策。更新时，我们将更改上方的“最近更新日期”。",
       contactHeading: "联系我们",
-      contactBody: "对本隐私政策有疑问？请发送邮件至 <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> 或致电 <a href=\"tel:+15085836060\">(508) 583-6060</a>。"
+      contactBody: "对本隐私政策有疑问？请发送邮件至 <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> 或致电 <a href=\"tel:+15085836060\">(508) 583-6060</a>。",
+      cookiesHow: "随时可通过<button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Cookie 设置</button>管理您的选择。",
+    },
+    consent: {
+      title: "Cookie",
+      body: "我们使用必要 Cookie 运行本网站，包括您的语言选择。在您允许的情况下，我们还可能使用分析和广告 Cookie。您可以接受、拒绝或选择类别。请参阅我们的<a href=\"privacy.html\">隐私政策</a>。",
+      gpcNote: "您的浏览器发送了全球隐私控制（GPC）信号，因此广告 Cookie 将保持关闭。",
+      accept: "全部接受",
+      reject: "拒绝非必要项",
+      settings: "Cookie 设置",
+      settingsTitle: "Cookie 设置",
+      settingsIntro: "请选择允许哪些可选 Cookie。必要 Cookie 始终开启。详情见我们的<a href=\"privacy.html\">隐私政策</a>。",
+      necessary: "必要",
+      necessaryHelp: "网站运行所需，包括语言偏好。始终开启。",
+      analytics: "分析",
+      analyticsHelp: "帮助我们了解访客如何使用网站（在启用 Google Analytics 时）。",
+      advertising: "广告",
+      advertisingHelp: "用于衡量广告。在启用时包括 Meta 像素。",
+      save: "保存选择",
+      close: "关闭"
     }
   };
 
@@ -2035,7 +2145,8 @@
       propertyPhotos: "Foto pwopriyete",
       propertyFacts: "Enfòmasyon sou pwopriyete",
       listingSummary: "Rezime pwopriyete",
-      langSwitcher: "Chwazi lang"
+      langSwitcher: "Chwazi lang",
+      legalNav: "Legal"
     },
     footer: {
       tagline: "Massachusetts, Rhode Island ak referans entènasyonal.",
@@ -2044,7 +2155,8 @@
       contactNote: "Kontakte nou jodi a pou nenpòt kesyon!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tout dwa rezève.",
       disclaimer: "Egalite Opòtinite Lojman. Gen lisans nan Massachusetts ak Rhode Island. Enfòmasyon yo konsidere yo kòm serye men yo pa garanti.",
-      privacy: "Règleman sou vi prive"
+      privacy: "Règleman sou vi prive",
+      cookieSettings: "Paramèt cookies"
     },
     mobileBar: { call: "Rele kounye a", email: "Ekri nou" },
     social: { followLabel: "Swiv nou" },
@@ -2058,7 +2170,8 @@
       serviceGeneral: "Demand jeneral",
       message: "Mesaj",
       sendMessage: "Voye mesaj",
-      preferCall: "Ou pito rele?"
+      preferCall: "Ou pito rele?",
+      privacyNote: "Lè ou voye fòm sa a, ou dakò ak <a href=\"privacy.html\">Règleman sou vi prive</a> nou an."
     },
     cta: { meetOurAgents: "Rankontre ajan nou yo", bookShowing: "Rezève yon vizit", bookConsultation: "Rezève yon konsiltasyon" },
     listing: {
@@ -2395,7 +2508,7 @@
       shareHeading: "Kijan nou pataje enfòmasyon yo",
       shareBody: "Nou pa vann enfòmasyon pèsonèl ou. Nou pataje yo sèlman ak ajan nou yo ak anplwaye ki bezwen yo pou ede ou; ak founisè ki trete fòm yo ak imèl (kounye a sèvis imèl Cloudflare) pou nou ka resevwa mesaj ou; lè lalwa mande sa oswa pou pwoteje dwa nou ak dwa kliyan nou yo; epi ak patnè referans sèlman si ou mande nou mete ou an kontak ak yo, pa egzanp pou yon referans entènasyonal.",
       cookiesHeading: "Cookies ak teknoloji menm jan an",
-      cookiesBody: "Nou pa itilize cookies piblisite ni analiz. Nou sove chwa lang ou nan depo lokal sou aparèy ou. Ou ka efase sa nenpòt lè nan paramèt navigatè ou.",
+      cookiesBody: "Nou itilize depo esansyèl pou sit la, enkli preferans lang ou ak chwa cookies ou. Si ou aksepte kategori opsyonèl, nou ka itilize cookies analiz ak cookies oswa pixel piblisite (pa egzanp Google Analytics oswa pixel Meta lè zouti sa yo aktive). Yon banyè cookies pèmèt ou aksepte tout, refize sa ki pa nesesè, oswa chwazi kategori. Ou ka chanje sa pita nan Paramèt cookies nan pye paj la.",
       retainHeading: "Konbyen tan nou kenbe enfòmasyon yo",
       retainBody: "Imèl demann ak dosye ki gen rapò yo kenbe toutotan sa nesesè pou reponn ou, bay sèvis imobilye, epi satisfè egzijans arsivaj, lisans, ak lalwa.",
       rightsHeading: "Chwa ou yo",
@@ -2407,7 +2520,26 @@
       changesHeading: "Chanjman",
       changesBody: "Nou ka mete règleman sa a ajou de tan zan tan. Lè nou fè sa, n ap chanje dat “Dènye aktyalizasyon” ki anwo a.",
       contactHeading: "Kontakte nou",
-      contactBody: "Kesyon sou Règleman sou vi prive sa a? Voye imèl nan <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> oswa rele <a href=\"tel:+15085836060\">(508) 583-6060</a>."
+      contactBody: "Kesyon sou Règleman sou vi prive sa a? Voye imèl nan <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> oswa rele <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      cookiesHow: "Jere chwa ou yo nenpòt lè ak <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Paramèt cookies</button>.",
+    },
+    consent: {
+      title: "Cookies",
+      body: "Nou itilize cookies esansyèl pou sit la, enkli chwa lang ou. Avèk pèmisyon ou n ka itilize cookies analiz ak piblisite. Ou ka aksepte, refize, oswa chwazi kategori. Gade <a href=\"privacy.html\">Règleman sou vi prive</a> nou an.",
+      gpcNote: "Navigatè ou a voye yon siyal Global Privacy Control, kidonk cookies piblisite yo rete fèmen.",
+      accept: "Aksepte tout",
+      reject: "Refize sa ki pa nesesè",
+      settings: "Paramèt cookies",
+      settingsTitle: "Paramèt cookies",
+      settingsIntro: "Chwazi ki cookies opsyonèl pou otorize. Cookies esansyèl yo toujou aktif. Detay yo nan <a href=\"privacy.html\">Règleman sou vi prive</a> nou an.",
+      necessary: "Esansyèl",
+      necessaryHelp: "Nesesè pou sit la mache, enkli preferans lang ou. Toujou aktif.",
+      analytics: "Analiz",
+      analyticsHelp: "Ede nou konprann kijan vizitè yo itilize sit la (Google Analytics, lè li aktive).",
+      advertising: "Piblisite",
+      advertisingHelp: "Ede mezire anons. Gen ladan pixel Meta lè li aktive.",
+      save: "Anregistre chwa",
+      close: "Fèmen"
     }
   };
 
@@ -2431,7 +2563,8 @@
       propertyPhotos: "Fotu di imóvel",
       propertyFacts: "Informason di imóvel",
       listingSummary: "Rezumu di anúnsiu",
-      langSwitcher: "Skodje lingua"
+      langSwitcher: "Skodje lingua",
+      legalNav: "Legal"
     },
     footer: {
       tagline: "Massachusetts, Rhode Island ku referénsia internasional.",
@@ -2440,7 +2573,8 @@
       contactNote: "Kontatu-nu oji pa xinta sabe mas!",
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tudu dretu rezervadu.",
       disclaimer: "Igualdadi di Oportunidadi di Kasa. Ku lisensa na Massachusetts ku Rhode Island. Informason ta konsiderádu fiável má ka ta garantidu.",
-      privacy: "Polítika di privacidadi"
+      privacy: "Polítika di privacidadi",
+      cookieSettings: "Definison di cookies"
     },
     mobileBar: { call: "Xama gora", email: "Manda-nu email" },
     social: { followLabel: "Sigi-nu" },
@@ -2454,7 +2588,8 @@
       serviceGeneral: "Pergunta jeral",
       message: "Mensajen",
       sendMessage: "Manda mensajen",
-      preferCall: "Prefere xama?"
+      preferCall: "Prefere xama?",
+      privacyNote: "Ku manda es formuláriu, bu ta konkorda ku nos <a href=\"privacy.html\">Polítika di privacidadi</a>."
     },
     cta: { meetOurAgents: "Konxe nos ajenti", bookShowing: "Marka un vizita", bookConsultation: "Marka un konsulta" },
     listing: {
@@ -2791,7 +2926,7 @@
       shareHeading: "Modi ki nos ta partilha informason",
       shareBody: "Nos ka ta vende bu informason pesoal. Nos ta partilha-l so ku nos ajenti i ekipa ki mestê-l pa djuda-bu; ku provedoris ki ta prosesa formuláriu i email (atualmente sérvisu di email di Cloudflare) pa nos rsebe bu mensaji; ku lei ta esiji ô pa proteje nos dretu i dretu di nos klienti; i ku parseru di referénsia so si bu pedi-nu liga-bu ku es, sima pa un referénsia internasional.",
       cookiesHeading: "Cookies ku teknolojia semejanti",
-      cookiesBody: "Nos ka ta uza cookies di publisidadi nen di análise. Nos ta guarda bu skodja di lingua na armazenamentu lokal di bu aparelhu. Bu pode apaga-l nunka ki bu kre na definison di navegador.",
+      cookiesBody: "Nos ta uza armazenamentu esensial pa sitiu, inkluindu bu preferénsia di lingua ku bu skodja di cookies. Si bu asetá kategoria opsional, nos pode uza cookies di análise ku cookies ô pixel di publisidadi (por ezénplu Google Analytics ô pixel di Meta ku kes ferramentu sta ativadu). Un banner di cookies ta permite asetá tudu, recusa ken ka esensial, ô skodje kategoria. Bu pode muda dipos na Definison di cookies na rodapé.",
       retainHeading: "Kuantu tenpu nos ta guarda informason",
       retainBody: "Email di pergunta ku rejistu relasionadu ta fika guardadu ku tempu nesesáriu pa respondi-bu, da sérvisu di imobiliária, i kumpri esijénsia di arquivo, lisensa, i lei.",
       rightsHeading: "Bu skodjas",
@@ -2803,7 +2938,26 @@
       changesHeading: "Mudansas",
       changesBody: "Nos pode atualiza kel polítika di ves en ves. Ku nos faze-l, nos ta muda data di “Últimu atualizason” riba.",
       contactHeading: "Kontatu-nu",
-      contactBody: "Pergunta sobri kel Polítika di privacidadi? Manda email pa <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ô xama <a href=\"tel:+15085836060\">(508) 583-6060</a>."
+      contactBody: "Pergunta sobri kel Polítika di privacidadi? Manda email pa <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ô xama <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
+      cookiesHow: "Jera bu skodjas nunka ki bu kre ku <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Definison di cookies</button>.",
+    },
+    consent: {
+      title: "Cookies",
+      body: "Nos ta uza cookies esensial pa sitiu funsiona, inkluindu bu lingua. Ku bu permisu nos pode uza cookies di análise ku publisidadi. Bu pode asetá, recusa, ô skodje kategoria. Odja nos <a href=\"privacy.html\">Polítika di privacidadi</a>.",
+      gpcNote: "Bu navegador manda un sinal Global Privacy Control, anton cookies di publisidadi ta fika disligadu.",
+      accept: "Asetá tudu",
+      reject: "Recusa ken ka esensial",
+      settings: "Definison di cookies",
+      settingsTitle: "Definison di cookies",
+      settingsIntro: "Skodje kual cookies opsional pa permite. Cookies esensial sta sempri ligadu. Detalhi sta na nos <a href=\"privacy.html\">Polítika di privacidadi</a>.",
+      necessary: "Esensial",
+      necessaryHelp: "Nesesáriu pa sitiu funsiona, inkluindu preferénsia di lingua. Sempri ligadu.",
+      analytics: "Análise",
+      analyticsHelp: "Ta djuda-nu komprende modi vizitantis ta uza sitiu (Google Analytics, ku sta ativadu).",
+      advertising: "Publisidadi",
+      advertisingHelp: "Ta djuda midi anúnsiu. Inklui pixel di Meta ku sta ativadu.",
+      save: "Guarda skodjas",
+      close: "Fitxa"
     }
   };
 
