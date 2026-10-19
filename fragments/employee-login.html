@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Employee login | Martins &amp; Associates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/employee/employee.css">
+  <link rel="icon" href="https://static.wixstatic.com/media/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png/v1/fill/w_32,h_32,al_c,q_85,enc_auto/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png" type="image/png">
+</head>
+<body class="emp-login-page">
+  <main class="emp-login">
+    <a class="emp-login__brand" href="/index.html">Martins &amp; Associates</a>
+    <h1>Employee login</h1>
+    <p>Sign in to write, schedule, and publish blog articles. Accounts are created by an administrator.</p>
+    <form id="login-form" class="emp-login__form">
+      <label>Email<input type="email" name="email" autocomplete="username" required></label>
+      <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+      <p class="emp-login__error" id="login-error" hidden></p>
+      <button class="btn btn--gold" type="submit">Sign in</button>
+    </form>
+    <p class="emp-login__back"><a href="/index.html">Back to the website</a></p>
+  </main>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var err = document.getElementById("login-error");
+      err.hidden = true;
+      var form = e.target;
+      var res = await fetch("/api/employee/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        body: JSON.stringify({ email: form.email.value, password: form.password.value })
+      });
+      var data = await res.json().catch(function () { return {}; });
+      if (!res.ok) {
+        err.textContent = data.error || "Could not sign in.";
+        err.hidden = false;
+        return;
+      }
+      window.location.href = "/employee/";
+    });
+  </script>
+</body>
+</html>

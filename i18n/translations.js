@@ -14,6 +14,7 @@
       buySell: "Buy & Sell",
       renting: "Renting",
       listings: "Listings",
+      blog: "Blog",
       about: "About"
     },
     a11y: {
@@ -45,7 +46,8 @@
       copyright: "© 2003–2026 Martins & Associates Real Estate. All rights reserved.",
       disclaimer: "Equal Housing Opportunity. Licensed in Massachusetts and Rhode Island. Information is deemed reliable but not guaranteed.",
       privacy: "Privacy Policy",
-      cookieSettings: "Cookie settings"
+      cookieSettings: "Cookie settings",
+      employeeLogin: "Employee login"
     },
     mobileBar: {
       call: "Call now",
@@ -103,6 +105,7 @@
       buySell: { title: "Buy & Sell | Martins & Associates Real Estate" },
       renting: { title: "Renting | Martins & Associates Real Estate" },
       listings: { title: "Listings | Martins & Associates Real Estate" },
+      blog: { title: "Blog | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Commercial redevelopment | Martins & Associates" },
       listing686: { title: "686 Broadway, Raynham, MA | Business opportunity | Martins & Associates" },
       privacy: { title: "Privacy Policy | Martins & Associates Real Estate" }
@@ -408,7 +411,7 @@
       collectL3: "Phone number (optional)",
       collectL4: "Your message, including preferred times or a property address",
       collectL5: "The service you selected, such as a showing or a general inquiry",
-      collectAfter: "We also store your language preference in your browser’s local storage so the site can remember your choice. Our hosting provider (Cloudflare) and similar infrastructure may process technical data such as IP address, browser type, and request logs in order to deliver and secure the site. Fonts and images served by third parties (including Google Fonts and image hosts) may receive your IP address when your browser requests those files.",
+      collectAfter: "We also store your language preference in your browser’s local storage so the site can remember your choice. Our hosting provider (Cloudflare) and similar infrastructure may process technical data such as IP address, browser type, and request logs in order to deliver and secure the site. Fonts and images served by third parties (including Google Fonts and image hosts) may receive your IP address when your browser requests those files. Article pages may record a privacy-conscious view count: we store a one-way hash for the day rather than a lasting advertising profile, and we do not count employee previews.",
       useHeading: "How we use information",
       useIntro: "We use the information you provide to:",
       useL1: "Respond to inquiries and schedule showings or consultations",
@@ -433,6 +436,18 @@
       contactBody: "Questions about this Privacy Policy? Email <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> or call <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
       cookiesHow: "Manage your choices anytime with <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Cookie settings</button>.",
     },
+    blog: {
+      listingEyebrow: "Insights",
+      listingTitle: "Stories from the <em>desk</em>",
+      listingLead: "Market notes, how-to guidance, and property stories from Martins & Associates.",
+      empty: "New articles are on the way. Check back soon.",
+      readMore: "Read more",
+      loadMore: "Load more",
+      homeEyebrow: "From the blog",
+      homeTitle: "Stories, <em>guidance</em> & market notes",
+      homeLead: "Published articles from our team — listings, local market context, and practical advice for buyers, sellers, and renters.",
+      homeViewAll: "View all articles"
+    },
     consent: {
       title: "Cookies",
       body: "We use essential cookies to run this site, including your language choice. With your permission we may also use analytics and advertising cookies. You can accept, reject, or choose categories. See our <a href=\"privacy.html\">Privacy Policy</a>.",
@@ -454,7 +469,7 @@
   };
 
   var ES = {
-    nav: { home: "Inicio", book: "Reservar en línea", buySell: "Comprar y Vender", renting: "Alquiler", listings: "Propiedades", about: "Sobre nosotros" },
+    nav: { home: "Inicio", book: "Reservar en línea", buySell: "Comprar y Vender", renting: "Alquiler", listings: "Propiedades", blog: "Blog", about: "Sobre nosotros" },
     a11y: {
       skipToContent: "Saltar al contenido",
       brandAlt: "Martins & Associates Real Estate",
@@ -484,7 +499,8 @@
       copyright: "© 2003–2026 Martins & Associates Real Estate. Todos los derechos reservados.",
       disclaimer: "Igualdad de Oportunidad de Vivienda. Licenciados en Massachusetts y Rhode Island. La información se considera confiable pero no está garantizada.",
       privacy: "Política de privacidad",
-      cookieSettings: "Configuración de cookies"
+      cookieSettings: "Configuración de cookies",
+      employeeLogin: "Acceso de empleados"
     },
     mobileBar: { call: "Llamar ahora", email: "Escríbenos" },
     social: { followLabel: "Síguenos" },
@@ -533,6 +549,7 @@
       buySell: { title: "Comprar y Vender | Martins & Associates Real Estate" },
       renting: { title: "Alquiler | Martins & Associates Real Estate" },
       listings: { title: "Propiedades | Martins & Associates Real Estate" },
+      blog: { title: "Blog | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Reurbanización comercial | Martins & Associates" },
       listing686: { title: "686 Broadway, Raynham, MA | Oportunidad de negocio | Martins & Associates" },
       privacy: { title: "Política de privacidad | Martins & Associates Real Estate" }
@@ -851,6 +868,18 @@
       contactBody: "¿Preguntas sobre esta Política de privacidad? Escriba a <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> o llame al <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
       cookiesHow: "Gestione sus opciones en cualquier momento con <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Configuración de cookies</button>.",
     },
+    blog: {
+      listingEyebrow: "Perspectivas",
+      listingTitle: "Historias desde el <em>escritorio</em>",
+      listingLead: "Notas de mercado, guías prácticas e historias de propiedades de Martins & Associates.",
+      empty: "Pronto habrá artículos nuevos. Vuelva a visitarnos.",
+      readMore: "Leer más",
+      loadMore: "Cargar más",
+      homeEyebrow: "Del blog",
+      homeTitle: "Historias, <em>orientación</em> y notas de mercado",
+      homeLead: "Artículos publicados por nuestro equipo: propiedades, contexto local y consejos prácticos.",
+      homeViewAll: "Ver todos los artículos"
+    },
     consent: {
       title: "Cookies",
       body: "Usamos cookies esenciales para el sitio, incluido su idioma. Con su permiso también podemos usar cookies de analítica y publicidad. Puede aceptar, rechazar o elegir categorías. Consulte nuestra <a href=\"privacy.html\">Política de privacidad</a>.",
@@ -872,7 +901,7 @@
   };
 
   var PT = {
-    nav: { home: "Início", book: "Reservar online", buySell: "Comprar e Vender", renting: "Aluguel", listings: "Imóveis", about: "Sobre nós" },
+    nav: { home: "Início", book: "Reservar online", buySell: "Comprar e Vender", renting: "Aluguel", listings: "Imóveis", blog: "Blog", about: "Sobre nós" },
     a11y: {
       skipToContent: "Ir para o conteúdo",
       brandAlt: "Martins & Associates Real Estate",
@@ -902,7 +931,8 @@
       copyright: "© 2003–2026 Martins & Associates Real Estate. Todos os direitos reservados.",
       disclaimer: "Igualdade de Oportunidade de Moradia. Licenciados em Massachusetts e Rhode Island. As informações são consideradas confiáveis, mas não garantidas.",
       privacy: "Política de privacidade",
-      cookieSettings: "Definições de cookies"
+      cookieSettings: "Definições de cookies",
+      employeeLogin: "Início de colaboradores"
     },
     mobileBar: { call: "Ligar agora", email: "Envie um e-mail" },
     social: { followLabel: "Siga-nos" },
@@ -951,6 +981,7 @@
       buySell: { title: "Comprar e Vender | Martins & Associates Real Estate" },
       renting: { title: "Aluguel | Martins & Associates Real Estate" },
       listings: { title: "Imóveis | Martins & Associates Real Estate" },
+      blog: { title: "Blog | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Reurbanização comercial | Martins & Associates" },
       listing686: { title: "686 Broadway, Raynham, MA | Oportunidade de negócio | Martins & Associates" },
       privacy: { title: "Política de privacidade | Martins & Associates Real Estate" }
@@ -1269,6 +1300,18 @@
       contactBody: "Dúvidas sobre esta Política de privacidade? Envie um e-mail para <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou ligue para <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
       cookiesHow: "Faça a gestão das suas escolhas a qualquer momento com <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Definições de cookies</button>.",
     },
+    blog: {
+      listingEyebrow: "Perspetivas",
+      listingTitle: "Histórias da <em>equipa</em>",
+      listingLead: "Notas de mercado, guias práticos e histórias de imóveis da Martins & Associates.",
+      empty: "Novos artigos estão a caminho. Volte em breve.",
+      readMore: "Ler mais",
+      loadMore: "Carregar mais",
+      homeEyebrow: "Do blog",
+      homeTitle: "Histórias, <em>orientação</em> e notas de mercado",
+      homeLead: "Artigos publicados pela nossa equipa — imóveis, contexto local e conselhos práticos.",
+      homeViewAll: "Ver todos os artigos"
+    },
     consent: {
       title: "Cookies",
       body: "Usamos cookies essenciais para o site, incluindo o seu idioma. Com a sua permissão também podemos usar cookies de análise e publicidade. Pode aceitar, recusar ou escolher categorias. Consulte a nossa <a href=\"privacy.html\">Política de privacidade</a>.",
@@ -1290,7 +1333,7 @@
   };
 
   var FR = {
-    nav: { home: "Accueil", book: "Réserver en ligne", buySell: "Achat & Vente", renting: "Location", listings: "Annonces", about: "À propos" },
+    nav: { home: "Accueil", book: "Réserver en ligne", buySell: "Achat & Vente", renting: "Location", listings: "Annonces", blog: "Blog", about: "À propos" },
     a11y: {
       skipToContent: "Aller au contenu",
       brandAlt: "Martins & Associates Real Estate",
@@ -1320,7 +1363,8 @@
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tous droits réservés.",
       disclaimer: "Égalité d’accès au logement. Agréés au Massachusetts et à Rhode Island. Les informations sont jugées fiables mais non garanties.",
       privacy: "Politique de confidentialité",
-      cookieSettings: "Paramètres des cookies"
+      cookieSettings: "Paramètres des cookies",
+      employeeLogin: "Espace collaborateurs"
     },
     mobileBar: { call: "Appeler", email: "Nous écrire" },
     social: { followLabel: "Suivez-nous" },
@@ -1369,6 +1413,7 @@
       buySell: { title: "Achat & Vente | Martins & Associates Real Estate" },
       renting: { title: "Location | Martins & Associates Real Estate" },
       listings: { title: "Annonces | Martins & Associates Real Estate" },
+      blog: { title: "Blog | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Réaménagement commercial | Martins & Associates" },
       listing686: { title: "686 Broadway, Raynham, MA | Opportunité commerciale | Martins & Associates" },
       privacy: { title: "Politique de confidentialité | Martins & Associates Real Estate" }
@@ -1687,6 +1732,18 @@
       contactBody: "Des questions sur cette politique de confidentialité ? Écrivez à <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ou appelez le <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
       cookiesHow: "Gérez vos choix à tout moment avec <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Paramètres des cookies</button>.",
     },
+    blog: {
+      listingEyebrow: "Perspectives",
+      listingTitle: "Récits du <em>bureau</em>",
+      listingLead: "Notes de marché, guides pratiques et histoires de biens par Martins & Associates.",
+      empty: "De nouveaux articles arrivent bientôt. Revenez plus tard.",
+      readMore: "Lire la suite",
+      loadMore: "Charger plus",
+      homeEyebrow: "Du blog",
+      homeTitle: "Récits, <em>conseils</em> et notes de marché",
+      homeLead: "Articles publiés par notre équipe — biens, contexte local et conseils pratiques.",
+      homeViewAll: "Voir tous les articles"
+    },
     consent: {
       title: "Cookies",
       body: "Nous utilisons des cookies essentiels pour le site, y compris votre langue. Avec votre permission, nous pouvons aussi utiliser des cookies d’analytique et de publicité. Vous pouvez accepter, refuser ou choisir les catégories. Voir notre <a href=\"privacy.html\">Politique de confidentialité</a>.",
@@ -1708,7 +1765,7 @@
   };
 
   var ZH = {
-    nav: { home: "首页", book: "在线预约", buySell: "买卖房产", renting: "租房", listings: "房源", about: "关于我们" },
+    nav: { home: "首页", book: "在线预约", buySell: "买卖房产", renting: "租房", listings: "房源", blog: "博客", about: "关于我们" },
     a11y: {
       skipToContent: "跳转到内容",
       brandAlt: "Martins & Associates 房地产",
@@ -1738,7 +1795,8 @@
       copyright: "© 2003–2026 Martins & Associates 房地产。保留所有权利。",
       disclaimer: "机会平等住房。已在马萨诸塞州和罗德岛获得执照。信息来源可靠，但不作担保。",
       privacy: "隐私政策",
-      cookieSettings: "Cookie 设置"
+      cookieSettings: "Cookie 设置",
+      employeeLogin: "员工登录"
     },
     mobileBar: { call: "立即致电", email: "给我们发邮件" },
     social: { followLabel: "关注我们" },
@@ -1787,6 +1845,7 @@
       buySell: { title: "买卖房产 | Martins & Associates 房地产" },
       renting: { title: "租房 | Martins & Associates 房地产" },
       listings: { title: "房源 | Martins & Associates 房地产" },
+      blog: { title: "博客 | Martins & Associates 房地产" },
       listing645: { title: "645 River St, Boston, MA | 商业地产再开发 | Martins & Associates" },
       listing686: { title: "686 Broadway, Raynham, MA | 商业机会 | Martins & Associates" },
       privacy: { title: "隐私政策 | Martins & Associates 房地产" }
@@ -2105,6 +2164,18 @@
       contactBody: "对本隐私政策有疑问？请发送邮件至 <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> 或致电 <a href=\"tel:+15085836060\">(508) 583-6060</a>。",
       cookiesHow: "随时可通过<button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Cookie 设置</button>管理您的选择。",
     },
+    blog: {
+      listingEyebrow: "见解",
+      listingTitle: "来自团队的<em>故事</em>",
+      listingLead: "Martins & Associates 的市场笔记、实用指南与房源故事。",
+      empty: "新文章即将发布，请稍后再来。",
+      readMore: "阅读更多",
+      loadMore: "加载更多",
+      homeEyebrow: "博客",
+      homeTitle: "故事、<em>指导</em>与市场笔记",
+      homeLead: "团队发布的文章——房源、本地市场与实用建议。",
+      homeViewAll: "查看全部文章"
+    },
     consent: {
       title: "Cookie",
       body: "我们使用必要 Cookie 运行本网站，包括您的语言选择。在您允许的情况下，我们还可能使用分析和广告 Cookie。您可以接受、拒绝或选择类别。请参阅我们的<a href=\"privacy.html\">隐私政策</a>。",
@@ -2126,7 +2197,7 @@
   };
 
   var HT = {
-    nav: { home: "Akèy", book: "Rezève sou entènèt", buySell: "Achte & Vann", renting: "Lwaye", listings: "Pwopriyete", about: "Konsènan nou" },
+    nav: { home: "Akèy", book: "Rezève sou entènèt", buySell: "Achte & Vann", renting: "Lwaye", listings: "Pwopriyete", blog: "Blog", about: "Konsènan nou" },
     a11y: {
       skipToContent: "Ale nan kontni",
       brandAlt: "Martins & Associates Real Estate",
@@ -2156,7 +2227,8 @@
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tout dwa rezève.",
       disclaimer: "Egalite Opòtinite Lojman. Gen lisans nan Massachusetts ak Rhode Island. Enfòmasyon yo konsidere yo kòm serye men yo pa garanti.",
       privacy: "Règleman sou vi prive",
-      cookieSettings: "Paramèt cookies"
+      cookieSettings: "Paramèt cookies",
+      employeeLogin: "Koneksyon anplwaye"
     },
     mobileBar: { call: "Rele kounye a", email: "Ekri nou" },
     social: { followLabel: "Swiv nou" },
@@ -2205,6 +2277,7 @@
       buySell: { title: "Achte & Vann | Martins & Associates Real Estate" },
       renting: { title: "Lwaye | Martins & Associates Real Estate" },
       listings: { title: "Pwopriyete | Martins & Associates Real Estate" },
+      blog: { title: "Blog | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Re-devlopman komèsyal | Martins & Associates" },
       listing686: { title: "686 Broadway, Raynham, MA | Opòtinite biznis | Martins & Associates" },
       privacy: { title: "Règleman sou vi prive | Martins & Associates Real Estate" }
@@ -2523,6 +2596,18 @@
       contactBody: "Kesyon sou Règleman sou vi prive sa a? Voye imèl nan <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> oswa rele <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
       cookiesHow: "Jere chwa ou yo nenpòt lè ak <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Paramèt cookies</button>.",
     },
+    blog: {
+      listingEyebrow: "Konsèy",
+      listingTitle: "Istwa soti nan <em>biwo a</em>",
+      listingLead: "Nòt mache, gid pratik, ak istwa pwopriyete Martins & Associates.",
+      empty: "Nouvo atik yo pral vini. Tounen pita.",
+      readMore: "Li plis",
+      loadMore: "Chaje plis",
+      homeEyebrow: "Blog la",
+      homeTitle: "Istwa, <em>gid</em> ak nòt mache",
+      homeLead: "Atik ekip nou an pibliye — pwopriyete, kontèks lokal, ak konsèy pratik.",
+      homeViewAll: "Wè tout atik yo"
+    },
     consent: {
       title: "Cookies",
       body: "Nou itilize cookies esansyèl pou sit la, enkli chwa lang ou. Avèk pèmisyon ou n ka itilize cookies analiz ak piblisite. Ou ka aksepte, refize, oswa chwazi kategori. Gade <a href=\"privacy.html\">Règleman sou vi prive</a> nou an.",
@@ -2544,7 +2629,7 @@
   };
 
   var KEA = {
-    nav: { home: "Inísiu", book: "Marka onlain", buySell: "Kunpra & Vende", renting: "Aluga", listings: "Imóveis", about: "Sobri nos" },
+    nav: { home: "Inísiu", book: "Marka onlain", buySell: "Kunpra & Vende", renting: "Aluga", listings: "Imóveis", blog: "Blog", about: "Sobri nos" },
     a11y: {
       skipToContent: "Bai pa kontéudu",
       brandAlt: "Martins & Associates Real Estate",
@@ -2574,7 +2659,8 @@
       copyright: "© 2003–2026 Martins & Associates Real Estate. Tudu dretu rezervadu.",
       disclaimer: "Igualdadi di Oportunidadi di Kasa. Ku lisensa na Massachusetts ku Rhode Island. Informason ta konsiderádu fiável má ka ta garantidu.",
       privacy: "Polítika di privacidadi",
-      cookieSettings: "Definison di cookies"
+      cookieSettings: "Definison di cookies",
+      employeeLogin: "Entrada di kolaborador"
     },
     mobileBar: { call: "Xama gora", email: "Manda-nu email" },
     social: { followLabel: "Sigi-nu" },
@@ -2623,6 +2709,7 @@
       buySell: { title: "Kunpra & Vende | Martins & Associates Real Estate" },
       renting: { title: "Aluga | Martins & Associates Real Estate" },
       listings: { title: "Imóveis | Martins & Associates Real Estate" },
+      blog: { title: "Blog | Martins & Associates Real Estate" },
       listing645: { title: "645 River St, Boston, MA | Reurbanizason komersial | Martins & Associates" },
       listing686: { title: "686 Broadway, Raynham, MA | Oportunidadi di negósiu | Martins & Associates" },
       privacy: { title: "Polítika di privacidadi | Martins & Associates Real Estate" }
@@ -2940,6 +3027,18 @@
       contactHeading: "Kontatu-nu",
       contactBody: "Pergunta sobri kel Polítika di privacidadi? Manda email pa <a href=\"mailto:martinsrealestate@msn.com\">martinsrealestate@msn.com</a> ô xama <a href=\"tel:+15085836060\">(508) 583-6060</a>.",
       cookiesHow: "Jera bu skodjas nunka ki bu kre ku <button type=\"button\" class=\"legal-text-button\" data-open-cookie-settings>Definison di cookies</button>.",
+    },
+    blog: {
+      listingEyebrow: "Perspetiva",
+      listingTitle: "Stória di <em>skritóri</em>",
+      listingLead: "Nota di merkadu, guia práticu i stória di imóvel di Martins & Associates.",
+      empty: "Artigu novu sta pa txiga. Volta gora.",
+      readMore: "Le más",
+      loadMore: "Karega más",
+      homeEyebrow: "Di blog",
+      homeTitle: "Stória, <em>orientason</em> i nota di merkadu",
+      homeLead: "Artigu publikadu pa nos ekipa — imóvel, kontestu lokal i konselhu práticu.",
+      homeViewAll: "Mira tudu artigu"
     },
     consent: {
       title: "Cookies",
