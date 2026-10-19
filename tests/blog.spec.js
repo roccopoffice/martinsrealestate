@@ -72,6 +72,9 @@ describe("blog publishing system", () => {
     const dash = await SELF.fetch("https://martinsrealestate.co/employee/", { redirect: "manual" });
     expect([302, 301]).toContain(dash.status);
     expect(dash.headers.get("location") || "").toContain("/employee/login");
+    const loginPage = await SELF.fetch("https://martinsrealestate.co/employee/login", { redirect: "manual" });
+    expect(loginPage.status).toBe(200);
+    expect(await loginPage.text()).toContain("Employee login");
   });
 
   it("keeps drafts private and publishes them to public pages", async () => {

@@ -2,6 +2,7 @@ import { recordPublicView } from "./analytics.js";
 import { getSession } from "./auth.js";
 import { getPostBySlug, getPublicPostBySlug, isPubliclyVisible, listPublicPosts } from "./posts.js";
 import { listingGrid, ogTags, renderBlocks, articleMeta } from "./render.js";
+import { readAssetHtml } from "./assets.js";
 import { HOME_PREVIEW_COUNT, PAGE_SIZE, escapeHtml, error, json, parseTs, siteUrl } from "./util.js";
 import { mediaUrl } from "./media.js";
 
@@ -35,30 +36,6 @@ export async function handlePublicPages(request, env, ctx, url) {
     return renderArticle(request, env, ctx, url, slug);
   }
   return null;
-}
-
-async function readAssetHtml(env, request, pathname) {
-  if (!env.ASSETS) return "";
-  const origin = new URL(request.url).origin;
-  const candidates = pathname.endsWith(".html")
-    ? [pathname, pathname.replace(/\.html$/, "")]
-    : [pathname, `${pathname}.html`];
-  for (const path of candidates) {
-    try {
-      let res = await env.ASSETS.fetch(new Request(`${origin}${path}`, { method: "GET" }));
-      if (res.status >= 300 && res.status < 400) {
-        const loc = res.headers.get("Location");
-        if (!loc) continue;
-        res = await env.ASSETS.fetch(new Request(new URL(loc, `${origin}${path}`).toString(), { method: "GET" }));
-      }
-      if (!res.ok) continue;
-      const text = await res.text();
-      if (text && /<html/i.test(text)) return text;
-    } catch {
-      /* try the next candidate */
-    }
-  }
-  return "";
 }
 
 function inject(html, marker, inner, fallbackHtml) {

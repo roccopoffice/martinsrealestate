@@ -1,4 +1,5 @@
 import { overviewStats, postAnalytics } from "./analytics.js";
+import { htmlPage, readAssetHtml } from "./assets.js";
 import { bootstrapAdmin, createEditor, getSession, login, logout, requireEmployee } from "./auth.js";
 import { hashPassword, verifyPassword } from "./crypto.js";
 import { deleteMedia, listMedia, uploadMedia } from "./media.js";
@@ -192,21 +193,39 @@ export async function handleEmployeePages(request, env, url) {
     if (session && !path.endsWith(".css") && !path.endsWith(".js")) {
       return Response.redirect(new URL("/employee/", request.url).toString(), 302);
     }
-    if (path === "/employee/login") {
-      return env.ASSETS.fetch(new Request(new URL("/employee/login.html", request.url), request));
-    }
-    return env.ASSETS.fetch(request);
+    if (path.endsWith(".css") || path.endsWith(".js")) return env.ASSETS.fetch(request);
+    return serveFragment(
+      env,
+      request,
+      "/fragments/employee-login.html",
+      LOGIN_FALLBACK
+    );
   }
 
   if (!session) {
     if (path.endsWith(".css") || path.endsWith(".js")) return env.ASSETS.fetch(request);
     return Response.redirect(new URL("/employee/login", request.url).toString(), 302);
   }
-  if (path === "/employee" || path === "/employee/") {
-    return env.ASSETS.fetch(new Request(new URL("/employee/index.html", request.url), request));
+  if (path.endsWith(".css") || path.endsWith(".js")) return env.ASSETS.fetch(request);
+  if (
+    path === "/employee" ||
+    path === "/employee/" ||
+    path === "/employee/index.html" ||
+    path.startsWith("/employee/")
+  ) {
+    return serveFragment(env, request, "/fragments/employee-app.html", APP_FALLBACK);
   }
   return env.ASSETS.fetch(request);
 }
+
+async function serveFragment(env, request, pathname, fallback) {
+  const html = (await readAssetHtml(env, request, pathname)) || fallback;
+  return htmlPage(html);
+}
+
+const LOGIN_FALLBACK = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Employee login</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/employee/employee.css"></head><body class="emp-login-page"><main class="emp-login"><h1>Employee login</h1><form id="login-form" class="emp-login__form"><label>Email<input type="email" name="email" required></label><label>Password<input type="password" name="password" required></label><p class="emp-login__error" id="login-error" hidden></p><button class="btn btn--gold" type="submit">Sign in</button></form></main><script>document.getElementById("login-form").addEventListener("submit",async function(e){e.preventDefault();var f=e.target;var res=await fetch("/api/employee/login",{method:"POST",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({email:f.email.value,password:f.password.value})});if(res.ok)location.href="/employee/";});</script></body></html>`;
+
+const APP_FALLBACK = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex"><title>Employee dashboard</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/employee/employee.css"></head><body class="emp-app"><div id="emp-view"></div><script src="/employee/editor.js"></script><script src="/employee/app.js"></script></body></html>`;
 
 async function updateMe(request, env, employee) {
   const body = await readJson(request);
