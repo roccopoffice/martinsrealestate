@@ -4,14 +4,44 @@
   "name": "martinsrealestate",
   "main": "worker.js",
   "compatibility_date": "2026-07-21",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": [
+      "/api/*",
+      "/blog",
+      "/blog/*",
+      "/employee",
+      "/employee/*",
+      "/media/*"
+    ]
   },
   "vars": {
     "SITE_URL": "https://martinsrealestate.co"
   },
+  "triggers": {
+    "crons": ["* * * * *"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "martins-blog",
+      "database_id": "00000000-0000-4000-8000-000000000001",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "martins-blog-media"
+    }
+  ],
   "send_email": [
     {
       "name": "EMAIL",

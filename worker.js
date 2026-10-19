@@ -1,8 +1,10 @@
+import { handleBlogRequest, publishDuePosts } from "./src/blog/router.js";
+
 const CONTACT_TO = "martinsrealestate@msn.com";
 const CONTACT_FROM = "website@martinsrealestate.co";
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/contact") {
@@ -14,8 +16,15 @@ export default {
       }
     }
 
+    const blogResponse = await handleBlogRequest(request, env, ctx);
+    if (blogResponse) return blogResponse;
+
     return env.ASSETS.fetch(request);
   },
+
+  async scheduled(controller, env, ctx) {
+    ctx.waitUntil(publishDuePosts(env));
+  }
 };
 
 async function handleContact(request, env) {
@@ -47,7 +56,7 @@ async function handleContact(request, env) {
       service ? `Service: ${service}` : null,
       property ? `Property: ${property}` : null,
       "",
-      message || "(No message provided)",
+      message || "(No message provided)"
     ].filter(Boolean);
 
     const text = lines.join("\n");
@@ -63,7 +72,7 @@ async function handleContact(request, env) {
       replyTo: email,
       subject,
       text,
-      html: `<div style="font-family:system-ui,sans-serif;line-height:1.5">${html}</div>`,
+      html: `<div style="font-family:system-ui,sans-serif;line-height:1.5">${html}</div>`
     });
 
     return redirectAfterSubmit(request, data);

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Employee dashboard | Martins &amp; Associates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/employee/employee.css">
+  <link rel="icon" href="https://static.wixstatic.com/media/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png/v1/fill/w_32,h_32,al_c,q_85,enc_auto/bd2954_619ef44cea334d0584a901e26860bb71~mv2.png" type="image/png">
+</head>
+<body class="emp-app">
+  <div class="emp-shell">
+    <aside class="emp-nav">
+      <a class="emp-nav__brand" href="/employee/">Martins Blog</a>
+      <nav>
+        <a href="#/overview">Overview</a>
+        <a href="#/posts">All Posts</a>
+        <a href="#/new">Create New Post</a>
+        <a href="#/drafts">Drafts</a>
+        <a href="#/scheduled">Scheduled Posts</a>
+        <a href="#/published">Published Posts</a>
+        <a href="#/media">Media Library</a>
+        <a href="#/analytics">Analytics</a>
+        <a href="#/settings">Account Settings</a>
+      </nav>
+      <button type="button" id="logout-btn" class="emp-nav__logout">Log out</button>
+    </aside>
+    <div class="emp-main">
+      <header class="emp-top">
+        <p id="emp-who"></p>
+        <a href="/blog" target="_blank" rel="noopener">View public blog</a>
+      </header>
+      <div id="emp-view" class="emp-view"></div>
+    </div>
+  </div>
+  <script src="/employee/editor.js"></script>
+  <script src="/employee/app.js"></script>
+</body>
+</html>
