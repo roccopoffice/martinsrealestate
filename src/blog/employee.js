@@ -1,11 +1,21 @@
 import { overviewStats, postAnalytics } from "./analytics.js";
 import { htmlPage, readAssetHtml } from "./assets.js";
-import { bootstrapAdmin, createEditor, getSession, login, logout, requireEmployee } from "./auth.js";
+import {
+  CSRF_COOKIE,
+  SESSION_COOKIE,
+  bootstrapAdmin,
+  createEditor,
+  getSession,
+  invalidateEmployeeSessions,
+  login,
+  logout,
+  requireEmployee
+} from "./auth.js";
 import { hashPassword, verifyPassword } from "./crypto.js";
 import { deleteMedia, listMedia, uploadMedia } from "./media.js";
 import { createPost, getPostById, listPosts, setStatus, updatePost } from "./posts.js";
 import { TEMPLATE_META } from "./templates.js";
-import { error, json, nowIso } from "./util.js";
+import { MAX_POSTS_PER_HOUR, clearCookie, error, hourAgoIso, json, nowIso } from "./util.js";
 
 export async function handleEmployeeApi(request, env, url) {
   const path = url.pathname;
@@ -29,7 +39,7 @@ export async function handleEmployeeApi(request, env, url) {
   if (path === "/api/employee/me" && method === "PATCH") {
     const gate = await requireEmployee(request, env, { mutating: true });
     if (gate.error) return gate.error;
-    return updateMe(request, env, gate.session.employee);
+    return updateMe(request, env, gate.session);
   }
 
   if (path === "/api/employee/overview" && method === "GET") {
@@ -64,6 +74,14 @@ export async function handleEmployeeApi(request, env, url) {
     if (gate.error) return gate.error;
     const body = await readJson(request);
     if (body.error) return body.error;
+    const recent = await env.DB.prepare(
+      "SELECT COUNT(*) AS n FROM posts WHERE author_id = ? AND created_at >= ?"
+    )
+      .bind(gate.session.employee.id, hourAgoIso())
+      .first();
+    if (Number(recent?.n || 0) >= MAX_POSTS_PER_HOUR) {
+      return error("Article creation limit reached. Try again in an hour.", 429);
+    }
     const post = await createPost(env, gate.session.employee, body);
     return json({ post }, 201);
   }
@@ -79,8 +97,12 @@ export async function handleEmployeeApi(request, env, url) {
     if (method === "PUT" && !action) {
       const body = await readJson(request);
       if (body.error) return body.error;
-      const updated = await updatePost(env, post.id, body);
-      return json({ post: updated });
+      try {
+        const updated = await updatePost(env, post.id, body);
+        return json({ post: updated });
+      } catch (err) {
+        return error(err.message || "Could not update post.", err.status || 400);
+      }
     }
     if (method === "POST" && action) {
       try {
@@ -163,15 +185,34 @@ export async function handleEmployeeApi(request, env, url) {
     const body = await readJson(request);
     if (body.error) return body.error;
     if (body.role) return error("Role changes are not allowed from the dashboard.", 403);
-    const user = await env.DB.prepare("SELECT id, role FROM employees WHERE id = ?").bind(userMatch[1]).first();
+    const user = await env.DB.prepare("SELECT id, role, active FROM employees WHERE id = ?")
+      .bind(userMatch[1])
+      .first();
     if (!user) return error("Account not found.", 404);
     const name = body.name != null ? String(body.name).trim() : null;
     const active = body.active == null ? null : body.active ? 1 : 0;
-    await env.DB.prepare(
-      `UPDATE employees SET name = COALESCE(?, name), active = COALESCE(?, active), updated_at = ? WHERE id = ?`
+    const result = await env.DB.prepare(
+      `UPDATE employees
+       SET name = COALESCE(?, name),
+           active = COALESCE(?, active),
+           updated_at = ?
+       WHERE id = ?
+         AND (
+           ? IS NULL
+           OR ? = 1
+           OR role != 'admin'
+           OR (SELECT COUNT(*) FROM employees WHERE role = 'admin' AND active = 1 AND id != ?) >= 1
+         )`
     )
-      .bind(name, active, nowIso(), user.id)
+      .bind(name, active, nowIso(), user.id, active, active, user.id)
       .run();
+    if (active === 0) {
+      const still = await env.DB.prepare("SELECT active, role FROM employees WHERE id = ?").bind(user.id).first();
+      if (still && Number(still.active) === 1 && still.role === "admin") {
+        return error("The last active administrator cannot be deactivated.", 409);
+      }
+      await invalidateEmployeeSessions(env, user.id);
+    }
     return json({ ok: true });
   }
 
@@ -227,7 +268,8 @@ const LOGIN_FALLBACK = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-
 
 const APP_FALLBACK = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex"><title>Employee dashboard</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/employee/employee.css"></head><body class="emp-app"><div id="emp-view"></div><script src="/employee/editor.js"></script><script src="/employee/app.js"></script></body></html>`;
 
-async function updateMe(request, env, employee) {
+async function updateMe(request, env, session) {
+  const employee = session.employee;
   const body = await readJson(request);
   if (body.error) return body.error;
   const name = String(body.name || "").trim();
@@ -238,6 +280,7 @@ async function updateMe(request, env, employee) {
       .bind(name, nowIso(), employee.id)
       .run();
   }
+  let sessionInvalidated = false;
   if (nextPassword) {
     if (nextPassword.length < 10) return error("New password must be at least 10 characters.");
     const row = await env.DB.prepare("SELECT password_hash FROM employees WHERE id = ?").bind(employee.id).first();
@@ -247,11 +290,28 @@ async function updateMe(request, env, employee) {
     await env.DB.prepare("UPDATE employees SET password_hash = ?, updated_at = ? WHERE id = ?")
       .bind(await hashPassword(nextPassword), nowIso(), employee.id)
       .run();
+    await invalidateEmployeeSessions(env, employee.id);
+    sessionInvalidated = true;
   }
   const updated = await env.DB.prepare("SELECT id, email, name, role FROM employees WHERE id = ?")
     .bind(employee.id)
     .first();
-  return json({ employee: updated });
+  if (!sessionInvalidated) return json({ employee: updated, sessionInvalidated: false });
+  const headers = new Headers({
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff"
+  });
+  headers.append("Set-Cookie", clearCookie(SESSION_COOKIE, request));
+  headers.append("Set-Cookie", clearCookie(CSRF_COOKIE, request));
+  return new Response(
+    JSON.stringify({
+      employee: updated,
+      sessionInvalidated: true,
+      message: "Password updated. Sign in again with your new password."
+    }),
+    { status: 200, headers }
+  );
 }
 
 async function readJson(request) {

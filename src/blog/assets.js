@@ -1,3 +1,5 @@
+import { securityHeaders } from "./util.js";
+
 export async function readAssetHtml(env, request, pathname) {
   if (!env.ASSETS) return "";
   const origin = new URL(request.url).origin;
@@ -29,6 +31,10 @@ export async function readAssetHtml(env, request, pathname) {
 export function htmlPage(html, { status = 200, cache = "no-store" } = {}) {
   return new Response(html, {
     status,
-    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": cache }
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": cache,
+      ...securityHeaders()
+    }
   });
 }

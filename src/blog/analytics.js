@@ -11,9 +11,10 @@ export async function recordPublicView(request, env, post, { preview = false } =
   if (BOT_SKIP && isBot(request)) return { recorded: false, reason: "automated" };
   const session = await getSession(request, env);
   if (session) return { recorded: false, reason: "employee" };
+  const salt = String(env.SESSION_SECRET || "");
+  if (!salt) return { recorded: false, reason: "unconfigured" };
   const ua = request.headers.get("user-agent") || "";
   const ip = clientIp(request);
-  const salt = env.SESSION_SECRET || "martins-view-salt";
   const visitorHash = await sha256Hex(`${salt}|${ip}|${ua}|${post.id}|${todayUtc()}`);
   try {
     await env.DB.prepare(

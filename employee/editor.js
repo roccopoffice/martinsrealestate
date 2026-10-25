@@ -23,6 +23,46 @@
     return crypto.randomUUID();
   }
 
+  function pad(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function localDateTimeToOffsetIso(value) {
+    if (!value) return "";
+    var d = new Date(value);
+    if (Number.isNaN(d.getTime())) return "";
+    var off = -d.getTimezoneOffset();
+    var sign = off >= 0 ? "+" : "-";
+    var abs = Math.abs(off);
+    return (
+      d.getFullYear() +
+      "-" +
+      pad(d.getMonth() + 1) +
+      "-" +
+      pad(d.getDate()) +
+      "T" +
+      pad(d.getHours()) +
+      ":" +
+      pad(d.getMinutes()) +
+      ":" +
+      pad(d.getSeconds()) +
+      sign +
+      pad(Math.floor(abs / 60)) +
+      ":" +
+      pad(abs % 60)
+    );
+  }
+
+  function safeDisplayHtml(html) {
+    return String(html || "")
+      .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
+      .replace(/<script[\s\S]*?>/gi, "")
+      .replace(/<iframe[\s\S]*?>[\s\S]*?<\/iframe>/gi, "")
+      .replace(/<iframe[\s\S]*?>/gi, "")
+      .replace(/\son[a-z]+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "")
+      .replace(/\b(href|src)\s*=\s*(['"]?)\s*(javascript:|data:|vbscript:)/gi, '$1=$2');
+  }
+
   function emptyData(type) {
     switch (type) {
       case "heading":
@@ -102,7 +142,10 @@
       }
 
       async function saveDraft() {
-        var payload = Object.assign(collectSettings(), { blocks: collectBlocks() });
+        var payload = Object.assign(collectSettings(), {
+          blocks: collectBlocks(),
+          updatedAt: state.post.updatedAt
+        });
         var updated = await api.save(post.id, payload);
         state.post = updated.post;
         state.dirty = false;
@@ -121,11 +164,11 @@
           '<button type="button" class="btn btn-ghost" data-act="schedule">Schedule</button>' +
           '<button type="button" class="btn btn-ghost" data-act="unpublish">Unpublish</button>' +
           '<button type="button" class="btn btn-ghost" data-act="archive">Archive</button>' +
-          '<input type="datetime-local" name="when" aria-label="Schedule time">' +
+          '<label class="emp-note">Schedule time (your local timezone) <input type="datetime-local" name="when" aria-label="Schedule time in your local timezone"></label>' +
           "</div>" +
           '<p class="emp-note">Status: <span class="emp-status">' +
           (state.post.status || "draft") +
-          "</span> · Autosave keeps a draft. Previews do not count as public views.</p>" +
+          "</span> · Autosave keeps a draft. Previews do not count as public views. Times are converted to an offset timestamp before saving.</p>" +
           '<div class="emp-editor">' +
           '<aside class="emp-palette"><h3>Add</h3>' +
           Object.keys(BLOCK_LABELS)
@@ -202,7 +245,7 @@
           return (
             (block.type === "tip" ? '<input data-k="title" value="' + esc(d.title) + '">' : "") +
             '<div contenteditable="true" data-k="html">' +
-            (d.html || "") +
+            safeDisplayHtml(d.html || "") +
             "</div>"
           );
         }
@@ -359,7 +402,7 @@
           var when = root.querySelector("[name=when]").value;
           if (!when) return toast("Choose a future date and time");
           await saveDraft();
-          await api.schedule(post.id, new Date(when).toISOString());
+          await api.schedule(post.id, localDateTimeToOffsetIso(when));
           toast("Scheduled");
           location.hash = "#/scheduled";
         }

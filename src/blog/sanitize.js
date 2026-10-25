@@ -19,45 +19,141 @@ const ALLOWED_TAGS = {
   span: []
 };
 
-export function sanitizeHtml(input) {
-  const raw = String(input || "");
-  const withoutDanger = raw
-    .replace(/\0/g, "")
-    .replace(/<\s*(script|style|iframe|object|embed|link|meta|form|input|textarea|button|svg|math|video|audio)[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi, "")
-    .replace(/<\s*(script|style|iframe|object|embed|link|meta|form|input|textarea|button|svg|math)[^>]*\/?>/gi, "");
+const VOID_TAGS = new Set(["br"]);
 
-  return withoutDanger.replace(/<\/?([a-zA-Z0-9]+)([^>]*)>/g, (full, tag, attrs) => {
-    const name = tag.toLowerCase();
-    const closing = /^<\s*\//.test(full);
-    if (!ALLOWED_TAGS[name]) return "";
-    if (closing) return `</${name}>`;
+export function sanitizeHtml(input) {
+  const raw = stripUnsafeRegions(String(input || ""));
+  let out = "";
+  let i = 0;
+  while (i < raw.length) {
+    const lt = raw.indexOf("<", i);
+    if (lt === -1) {
+      out += escapeText(raw.slice(i));
+      break;
+    }
+    out += escapeText(raw.slice(i, lt));
+    const parsed = readTag(raw, lt);
+    if (!parsed) {
+      out += "&lt;";
+      i = lt + 1;
+      continue;
+    }
+    i = parsed.next;
+    const name = parsed.name;
+    if (!ALLOWED_TAGS[name]) continue;
+    if (parsed.closing) {
+      out += `</${name}>`;
+      continue;
+    }
+    if (VOID_TAGS.has(name)) {
+      out += `<${name}>`;
+      continue;
+    }
     const allowed = ALLOWED_TAGS[name];
     const kept = [];
     if (allowed.includes("href")) {
-      const href = readAttr(attrs, "href");
-      const safe = sanitizeHref(href);
+      const safe = sanitizeHref(decodeEntities(parsed.attrs.href || ""));
       if (safe) kept.push(`href="${escapeAttr(safe)}"`);
     }
-    const extra = kept.length ? " " + kept.join(" ") : "";
-    return `<${name}${extra}>`;
-  });
+    out += kept.length ? `<${name} ${kept.join(" ")}>` : `<${name}>`;
+  }
+  return out;
 }
 
-function readAttr(attrs, name) {
-  const match = attrs.match(new RegExp(`${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))`, "i"));
-  return match ? match[1] || match[2] || match[3] || "" : "";
+function stripUnsafeRegions(value) {
+  return value
+    .replace(/\0/g, "")
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<!--[\s\S]*$/g, "")
+    .replace(/<!\[CDATA\[[\s\S]*?\]\]>/gi, "")
+    .replace(/<!(?:doctype|entity|element|attlist)[^>]*>/gi, "")
+    .replace(/<\?[\s\S]*?\?>/g, "");
 }
 
-function sanitizeHref(href) {
-  const value = String(href || "").trim();
+function readTag(raw, start) {
+  if (raw[start] !== "<") return null;
+  let i = start + 1;
+  const closing = raw[i] === "/";
+  if (closing) i += 1;
+  const nameStart = i;
+  while (i < raw.length && /[a-zA-Z0-9]/.test(raw[i])) i += 1;
+  if (i === nameStart) return null;
+  const name = raw.slice(nameStart, i).toLowerCase();
+  const attrs = {};
+  while (i < raw.length) {
+    while (i < raw.length && /[\s/]/.test(raw[i])) i += 1;
+    if (i >= raw.length) return null;
+    if (raw[i] === ">") {
+      return { name, closing, attrs, next: i + 1 };
+    }
+    const keyStart = i;
+    while (i < raw.length && /[a-zA-Z0-9:_-]/.test(raw[i])) i += 1;
+    if (i === keyStart) return null;
+    const key = raw.slice(keyStart, i).toLowerCase();
+    while (i < raw.length && /\s/.test(raw[i])) i += 1;
+    let value = "";
+    if (raw[i] === "=") {
+      i += 1;
+      while (i < raw.length && /\s/.test(raw[i])) i += 1;
+      if (raw[i] === '"' || raw[i] === "'") {
+        const quote = raw[i];
+        i += 1;
+        const valStart = i;
+        while (i < raw.length && raw[i] !== quote) i += 1;
+        if (i >= raw.length) return null;
+        value = raw.slice(valStart, i);
+        i += 1;
+      } else {
+        const valStart = i;
+        while (i < raw.length && !/[\s>]/.test(raw[i])) i += 1;
+        value = raw.slice(valStart, i);
+      }
+    }
+    attrs[key] = value;
+  }
+  return null;
+}
+
+function decodeEntities(value) {
+  return String(value || "")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => fromCodePoint(Number(dec)))
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&apos;/gi, "'")
+    .replace(/&amp;/gi, "&");
+}
+
+function fromCodePoint(code) {
+  if (!Number.isFinite(code) || code < 1 || code > 0x10ffff) return "";
+  try {
+    return String.fromCodePoint(code);
+  } catch {
+    return "";
+  }
+}
+
+export function sanitizeHref(href) {
+  const value = String(href || "").trim().replace(/[\u0000-\u001f\u007f]/g, "");
   if (!value) return "";
+  const lowered = value.toLowerCase();
+  if (lowered.startsWith("javascript:") || lowered.startsWith("data:") || lowered.startsWith("vbscript:")) {
+    return "";
+  }
   if (value.startsWith("/") && !value.startsWith("//")) return value;
-  if (/^https?:\/\//i.test(value) || /^mailto:/i.test(value) || /^tel:/i.test(value)) return value;
+  if (/^https:\/\//i.test(value) || /^http:\/\//i.test(value)) return value;
+  if (/^mailto:[^\s]+$/i.test(value) || /^tel:[^\s]+$/i.test(value)) return value;
   return "";
 }
 
 function escapeAttr(value) {
   return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+}
+
+function escapeText(value) {
+  return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 export function sanitizePlain(value, max = 500) {

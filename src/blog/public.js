@@ -3,7 +3,7 @@ import { getSession } from "./auth.js";
 import { getPostBySlug, getPublicPostBySlug, isPubliclyVisible, listPublicPosts } from "./posts.js";
 import { listingGrid, ogTags, renderBlocks, articleMeta } from "./render.js";
 import { readAssetHtml } from "./assets.js";
-import { HOME_PREVIEW_COUNT, PAGE_SIZE, escapeHtml, error, json, parseTs, siteUrl } from "./util.js";
+import { HOME_PREVIEW_COUNT, PAGE_SIZE, escapeHtml, error, json, parseTs, securityHeaders, siteUrl } from "./util.js";
 import { mediaUrl } from "./media.js";
 
 export async function handlePublicApi(request, env, url) {
@@ -39,7 +39,7 @@ export async function handlePublicPages(request, env, ctx, url) {
 }
 
 function inject(html, marker, inner, fallbackHtml) {
-  if (html && html.includes(marker)) return html.replace(marker, inner);
+  if (html && html.includes(marker)) return html.replace(marker, () => inner);
   return fallbackHtml;
 }
 
@@ -91,7 +91,11 @@ async function renderListing(request, env, url) {
     })
   );
   return new Response(html, {
-    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=60" }
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "public, max-age=60",
+      ...securityHeaders()
+    }
   });
 }
 
@@ -171,7 +175,8 @@ async function renderArticle(request, env, ctx, url, slug) {
   return new Response(html, {
     headers: {
       "Content-Type": "text/html; charset=utf-8",
-      "Cache-Control": preview ? "no-store" : "public, max-age=60"
+      "Cache-Control": preview ? "no-store" : "public, max-age=60",
+      ...securityHeaders()
     }
   });
 }

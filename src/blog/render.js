@@ -1,5 +1,6 @@
 import { escapeHtml, parseTs, siteUrl } from "./util.js";
 import { mediaUrl } from "./media.js";
+import { sanitizeHtml } from "./sanitize.js";
 
 export function articleMeta(post) {
   return {
@@ -21,7 +22,7 @@ function renderBlock(block) {
     case "subheading":
       return `<h3 class="article-sh">${escapeHtml(data.text)}</h3>`;
     case "paragraph":
-      return `<div class="article-p">${data.html || ""}</div>`;
+      return `<div class="article-p">${sanitizeHtml(data.html || "")}</div>`;
     case "image":
       if (!data.mediaId) return "";
       return `<figure class="article-figure">
@@ -53,7 +54,7 @@ function renderBlock(block) {
         )
         .join("")}</div>`;
     case "tip":
-      return `<aside class="article-tip"><strong>${escapeHtml(data.title || "Tip")}</strong><div>${data.html || ""}</div></aside>`;
+      return `<aside class="article-tip"><strong>${escapeHtml(data.title || "Tip")}</strong><div>${sanitizeHtml(data.html || "")}</div></aside>`;
     case "gallery":
       return `<div class="article-gallery">${(data.items || [])
         .filter((item) => item.mediaId)

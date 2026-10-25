@@ -74,7 +74,13 @@ export const SCHEMA_STATEMENTS = [
     created_at TEXT NOT NULL,
     UNIQUE (post_id, viewed_on, visitor_hash)
   )`,
-  `CREATE INDEX IF NOT EXISTS idx_views_post_day ON article_views(post_id, viewed_on)`
+  `CREATE INDEX IF NOT EXISTS idx_views_post_day ON article_views(post_id, viewed_on)`,
+  `CREATE TABLE IF NOT EXISTS bootstrap_lock (
+    id INTEGER PRIMARY KEY CHECK (id = 1),
+    created_at TEXT NOT NULL
+  )`,
+  `INSERT OR IGNORE INTO bootstrap_lock (id, created_at)
+   SELECT 1, datetime('now') FROM employees LIMIT 1`
 ];
 
 export async function applySchema(db) {

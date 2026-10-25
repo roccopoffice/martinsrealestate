@@ -5,22 +5,22 @@ import { publishDuePosts } from "./posts.js";
 import { deniedAssetPath } from "./util.js";
 import { applySchema } from "./schema.js";
 
-let schemaReady = false;
+let devSchemaReady = false;
 
-async function ensureSchema(env) {
-  if (!env.DB || schemaReady) return;
+async function maybeApplyDevSchema(env) {
+  if (!env.DB || env.BLOG_APPLY_SCHEMA !== "1" || devSchemaReady) return;
   await applySchema(env.DB);
-  schemaReady = true;
+  devSchemaReady = true;
 }
 
-export { publishDuePosts };
+export { publishDuePosts, applySchema };
 
 export async function handleBlogRequest(request, env, ctx) {
   const url = new URL(request.url);
   if (deniedAssetPath(url.pathname)) {
     return new Response("Not found", { status: 404 });
   }
-  if (env.DB) await ensureSchema(env);
+  await maybeApplyDevSchema(env);
 
   if (url.pathname.startsWith("/api/employee")) {
     const res = await handleEmployeeApi(request, env, url);

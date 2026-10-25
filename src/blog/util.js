@@ -4,7 +4,23 @@ export const SESSION_TTL_SECONDS = 60 * 60 * 12;
 export const LOGIN_WINDOW_MINUTES = 15;
 export const LOGIN_MAX_FAILURES = 8;
 export const MAX_UPLOAD_BYTES = 8 * 1024 * 1024;
+export const MAX_UPLOAD_REQUEST_BYTES = MAX_UPLOAD_BYTES + 256 * 1024;
+export const MAX_POSTS_PER_HOUR = 30;
+export const MAX_UPLOADS_PER_HOUR = 40;
 export const ALLOWED_IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
+export const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  "frame-src 'self'",
+  "object-src 'none'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com",
+  "img-src 'self' data: https://static.wixstatic.com",
+  "connect-src 'self'"
+].join("; ");
 export const TEMPLATES = ["editorial", "market", "guide", "spotlight", "advice"];
 export const STATUSES = ["draft", "scheduled", "published", "archived"];
 export const BLOCK_TYPES = new Set([
@@ -29,10 +45,42 @@ export function nowIso() {
   return new Date().toISOString().slice(0, 19).replace("T", " ");
 }
 
+export function nowIsoMs() {
+  return new Date().toISOString().replace("T", " ").replace("Z", "");
+}
+
 export function parseTs(value) {
   if (!value) return null;
-  if (/T/.test(String(value))) return new Date(value);
-  return new Date(String(value).replace(" ", "T") + "Z");
+  const raw = String(value).trim();
+  if (!raw) return null;
+  if (hasExplicitTimezone(raw) || /T/.test(raw)) {
+    const date = new Date(raw);
+    return Number.isNaN(date.getTime()) ? null : date;
+  }
+  const date = new Date(raw.replace(" ", "T") + "Z");
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+export function hasExplicitTimezone(value) {
+  const raw = String(value || "").trim();
+  return /[zZ]$/.test(raw) || /[+-]\d{2}:\d{2}$/.test(raw) || /[+-]\d{4}$/.test(raw);
+}
+
+export function toUtcSql(date) {
+  return date.toISOString().slice(0, 19).replace("T", " ");
+}
+
+export function hourAgoIso() {
+  return new Date(Date.now() - 60 * 60 * 1000).toISOString().slice(0, 19).replace("T", " ");
+}
+
+export function securityHeaders(extra = {}) {
+  return {
+    "Content-Security-Policy": CONTENT_SECURITY_POLICY,
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    ...extra
+  };
 }
 
 export function todayUtc() {
@@ -45,6 +93,7 @@ export function json(data, status = 200, headers = {}) {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
       ...headers
     }
   });
@@ -135,12 +184,14 @@ export function originOf(request) {
 }
 
 export function sameOrigin(request) {
+  const expected = originOf(request);
+  if (!expected) return false;
   const origin = request.headers.get("origin");
-  if (origin) return origin === originOf(request);
+  if (origin) return origin === expected;
   const referer = request.headers.get("referer");
-  if (!referer) return true;
+  if (!referer) return false;
   try {
-    return new URL(referer).origin === originOf(request);
+    return new URL(referer).origin === expected;
   } catch {
     return false;
   }
@@ -209,6 +260,7 @@ export function deniedAssetPath(pathname) {
     pathname.startsWith("/migrations/") ||
     pathname.startsWith("/tests/") ||
     pathname.startsWith("/scripts/") ||
+    pathname.startsWith("/fragments/employee") ||
     pathname === "/vitest.config.js" ||
     pathname === "/package.json" ||
     pathname === "/package-lock.json" ||
@@ -216,4 +268,40 @@ export function deniedAssetPath(pathname) {
     pathname === "/.dev.vars" ||
     pathname === "/.gitignore"
   );
+}
+
+export function detectImageType(bytes) {
+  const u = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  if (u.length >= 3 && u[0] === 0xff && u[1] === 0xd8 && u[2] === 0xff) return "image/jpeg";
+  if (u.length >= 8 && u[0] === 0x89 && u[1] === 0x50 && u[2] === 0x4e && u[3] === 0x47) return "image/png";
+  if (
+    u.length >= 6 &&
+    u[0] === 0x47 &&
+    u[1] === 0x49 &&
+    u[2] === 0x46 &&
+    u[3] === 0x38 &&
+    (u[4] === 0x37 || u[4] === 0x39) &&
+    u[5] === 0x61
+  ) {
+    return "image/gif";
+  }
+  if (
+    u.length >= 12 &&
+    u[0] === 0x52 &&
+    u[1] === 0x49 &&
+    u[2] === 0x46 &&
+    u[3] === 0x46 &&
+    u[8] === 0x57 &&
+    u[9] === 0x45 &&
+    u[10] === 0x42 &&
+    u[11] === 0x50
+  ) {
+    return "image/webp";
+  }
+  return "";
+}
+
+export function isUniqueConstraintError(err) {
+  const message = String(err?.message || err || "");
+  return /UNIQUE constraint failed/i.test(message) || /constraint failed/i.test(message);
 }

@@ -272,7 +272,7 @@
     document.getElementById("me-form").addEventListener("submit", async function (e) {
       e.preventDefault();
       var f = e.target;
-      await api("/api/employee/me", {
+      var saved = await api("/api/employee/me", {
         method: "PATCH",
         body: JSON.stringify({
           name: f.name.value,
@@ -280,6 +280,10 @@
           password: f.password.value
         })
       });
+      if (saved.sessionInvalidated) {
+        window.location.href = "/employee/login";
+        return;
+      }
       location.reload();
     });
     var userForm = document.getElementById("user-form");

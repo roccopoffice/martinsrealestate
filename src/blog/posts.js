@@ -1,6 +1,23 @@
 import { sanitizePostFields } from "./sanitize.js";
 import { starterFor } from "./templates.js";
-import { PAGE_SIZE, nowIso, parseTs, slugify } from "./util.js";
+import {
+  PAGE_SIZE,
+  hasExplicitTimezone,
+  isUniqueConstraintError,
+  nowIso,
+  nowIsoMs,
+  parseTs,
+  slugify,
+  toUtcSql
+} from "./util.js";
+
+export class ConflictError extends Error {
+  constructor(message = "This article was updated elsewhere. Reload and try again.") {
+    super(message);
+    this.name = "ConflictError";
+    this.status = 409;
+  }
+}
 
 const PUBLIC_FILTER = `status = 'published' AND published_at IS NOT NULL AND published_at <= datetime('now')`;
 
@@ -149,49 +166,67 @@ export async function createPost(env, employee, body) {
   const starter = starterFor(template, { name: employee.name, title: "Martins & Associates" });
   const fields = sanitizePostFields({ ...starter, ...body, template, status: body.status || "draft" });
   const id = crypto.randomUUID();
-  const slug = await uniqueSlug(env, fields.slug || fields.title);
-  const ts = nowIso();
-  const status = fields.status === "published" || fields.status === "scheduled" ? "draft" : "draft";
-  await env.DB.prepare(
-    `INSERT INTO posts (
-      id, slug, title, excerpt, template, status, author_id, author_name, author_title, author_bio,
-      featured_media_id, seo_title, seo_description, og_image_id, published_at, created_at, updated_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)`
-  )
-    .bind(
-      id,
-      slug,
-      fields.title,
-      fields.excerpt,
-      fields.template,
-      status,
-      employee.id,
-      fields.authorName || employee.name,
-      fields.authorTitle,
-      fields.authorBio,
-      fields.featuredMediaId || null,
-      fields.seoTitle,
-      fields.seoDescription,
-      fields.ogImageId || null,
-      ts,
-      ts
-    )
-    .run();
+  const ts = nowIsoMs();
+  const status = "draft";
+  let lastError;
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    const slug = await uniqueSlug(env, fields.slug || fields.title);
+    try {
+      await env.DB.prepare(
+        `INSERT INTO posts (
+          id, slug, title, excerpt, template, status, author_id, author_name, author_title, author_bio,
+          featured_media_id, seo_title, seo_description, og_image_id, published_at, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)`
+      )
+        .bind(
+          id,
+          slug,
+          fields.title,
+          fields.excerpt,
+          fields.template,
+          status,
+          employee.id,
+          fields.authorName || employee.name,
+          fields.authorTitle,
+          fields.authorBio,
+          fields.featuredMediaId || null,
+          fields.seoTitle,
+          fields.seoDescription,
+          fields.ogImageId || null,
+          ts,
+          ts
+        )
+        .run();
+      lastError = null;
+      break;
+    } catch (err) {
+      lastError = err;
+      if (!isUniqueConstraintError(err) || attempt === 5) throw err;
+    }
+  }
+  if (lastError) throw lastError;
   await saveBlocks(env, id, fields.blocks);
   return getPostById(env, id);
+}
+
+function hasOwn(object, key) {
+  return Object.prototype.hasOwnProperty.call(object || {}, key);
 }
 
 export async function updatePost(env, id, body) {
   const current = await getPostById(env, id, { withBlocks: false });
   if (!current) return null;
+  if (body.updatedAt != null && String(body.updatedAt) !== String(current.updatedAt)) {
+    throw new ConflictError();
+  }
   const fields = sanitizePostFields({ ...current, ...body, template: body.template || current.template });
   const slug = await uniqueSlug(env, fields.slug || current.slug || fields.title, id);
-  const ts = nowIso();
-  await env.DB.prepare(
+  const ts = nowIsoMs();
+  const result = await env.DB.prepare(
     `UPDATE posts SET
       slug = ?, title = ?, excerpt = ?, template = ?, author_name = ?, author_title = ?, author_bio = ?,
       featured_media_id = ?, seo_title = ?, seo_description = ?, og_image_id = ?, updated_at = ?
-     WHERE id = ?`
+     WHERE id = ? AND updated_at = ?`
   )
     .bind(
       slug,
@@ -206,32 +241,34 @@ export async function updatePost(env, id, body) {
       fields.seoDescription,
       fields.ogImageId || null,
       ts,
-      id
+      id,
+      current.updatedAt
     )
     .run();
-  if (body.blocks) await saveBlocks(env, id, fields.blocks);
+  if (result.meta?.changes === 0) throw new ConflictError();
+  if (hasOwn(body, "blocks") && Array.isArray(body.blocks)) {
+    await saveBlocks(env, id, fields.blocks);
+  }
   return getPostById(env, id);
 }
 
 export async function setStatus(env, id, { status, publishedAt }) {
   const current = await getPostById(env, id);
   if (!current) return null;
-  const ts = nowIso();
+  const ts = nowIsoMs();
   let nextPublished = current.publishedAt;
   if (status === "published") {
-    const requested = publishedAt ? parseTs(publishedAt) : null;
-    nextPublished =
-      requested && requested.getTime() <= Date.now()
-        ? requested.toISOString().slice(0, 19).replace("T", " ")
-        : ts;
+    const requested = publishedAt && hasExplicitTimezone(publishedAt) ? parseTs(publishedAt) : null;
+    nextPublished = requested && requested.getTime() <= Date.now() ? toUtcSql(requested) : nowIso();
   } else if (status === "scheduled") {
-    const when = publishedAt ? parseTs(publishedAt) : null;
+    if (!publishedAt || !hasExplicitTimezone(publishedAt)) {
+      throw new Error("Schedule a future date and time with a timezone offset.");
+    }
+    const when = parseTs(publishedAt);
     if (!when || when.getTime() <= Date.now()) {
       throw new Error("Schedule a future date and time.");
     }
-    nextPublished = publishedAt.includes("T")
-      ? new Date(publishedAt).toISOString().slice(0, 19).replace("T", " ")
-      : publishedAt;
+    nextPublished = toUtcSql(when);
   } else if (status === "draft" || status === "archived") {
     if (status === "draft") nextPublished = current.publishedAt;
   }
@@ -243,7 +280,7 @@ export async function setStatus(env, id, { status, publishedAt }) {
 
 export async function publishDuePosts(env) {
   if (!env.DB) return { published: 0 };
-  const ts = nowIso();
+  const ts = nowIsoMs();
   const { results } = await env.DB.prepare(
     `SELECT id FROM posts WHERE status = 'scheduled' AND published_at IS NOT NULL AND published_at <= datetime('now')`
   ).all();

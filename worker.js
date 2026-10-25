@@ -23,6 +23,7 @@ export default {
   },
 
   async scheduled(controller, env, ctx) {
+    // Production schema comes from versioned D1 migrations, not request-time CREATE TABLE.
     ctx.waitUntil(publishDuePosts(env));
   }
 };

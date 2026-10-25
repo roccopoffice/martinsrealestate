@@ -9,7 +9,8 @@ export default defineWorkersConfig({
         miniflare: {
           bindings: {
             SESSION_SECRET: "test-session-secret-value-32chars",
-            BOOTSTRAP_TOKEN: "test-bootstrap-token"
+            BOOTSTRAP_TOKEN: "test-bootstrap-token",
+            BLOG_APPLY_SCHEMA: "1"
           }
         }
       }

@@ -94,7 +94,9 @@ export async function login(request, env) {
     .bind(email)
     .first();
 
-  const ok = employee && employee.active && (await verifyPassword(password, employee.password_hash));
+  const storedHash = employee?.active ? employee.password_hash : await dummyStoredHash();
+  const passwordOk = await verifyPassword(password, storedHash);
+  const ok = !!(employee && employee.active && passwordOk);
   await env.DB.prepare(
     "INSERT INTO login_attempts (ip, email, success, created_at) VALUES (?, ?, ?, ?)"
   )
@@ -153,17 +155,18 @@ export async function logout(request, env) {
   return new Response(JSON.stringify({ ok: true }), { status: 200, headers });
 }
 
+export async function invalidateEmployeeSessions(env, employeeId) {
+  if (!env.DB || !employeeId) return;
+  await env.DB.prepare("DELETE FROM sessions WHERE employee_id = ?").bind(employeeId).run();
+}
+
 export async function bootstrapAdmin(request, env) {
   if (!env.DB) return error("Database is not configured.", 503);
   const expected = String(env.BOOTSTRAP_TOKEN || "");
   if (!expected) return error("Bootstrap is disabled.", 403);
   const provided = request.headers.get("x-bootstrap-token") || "";
-  if (provided.length !== expected.length || !(await tokensMatch(provided, expected))) {
+  if (!(await tokensMatch(provided, expected))) {
     return error("Invalid bootstrap token.", 403);
-  }
-  const existing = await env.DB.prepare("SELECT COUNT(*) AS n FROM employees").first();
-  if (existing && Number(existing.n) > 0) {
-    return error("An administrator already exists. Use the dashboard to add editors.", 409);
   }
   let body;
   try {
@@ -180,13 +183,25 @@ export async function bootstrapAdmin(request, env) {
   const id = crypto.randomUUID();
   const passwordHash = await hashPassword(password);
   const ts = nowIso();
-  await env.DB.prepare(
-    `INSERT INTO employees (id, email, name, password_hash, role, active, created_at, updated_at)
-     VALUES (?, ?, ?, ?, 'admin', 1, ?, ?)`
-  )
-    .bind(id, email, name, passwordHash, ts, ts)
-    .run();
+  try {
+    await env.DB.batch([
+      env.DB.prepare("INSERT INTO bootstrap_lock (id, created_at) VALUES (1, ?)").bind(ts),
+      env.DB.prepare(
+        `INSERT INTO employees (id, email, name, password_hash, role, active, created_at, updated_at)
+         VALUES (?, ?, ?, ?, 'admin', 1, ?, ?)`
+      ).bind(id, email, name, passwordHash, ts, ts)
+    ]);
+  } catch {
+    return error("An administrator already exists. Use the dashboard to add editors.", 409);
+  }
   return json({ ok: true, employee: { id, email, name, role: "admin" } }, 201);
+}
+
+let dummyHashPromise;
+
+function dummyStoredHash() {
+  dummyHashPromise ||= hashPassword(`timing-${randomToken(24)}`);
+  return dummyHashPromise;
 }
 
 async function tokensMatch(a, b) {

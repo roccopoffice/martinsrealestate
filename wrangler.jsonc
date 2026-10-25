@@ -19,19 +19,21 @@
       "/blog/*",
       "/employee",
       "/employee/*",
-      "/media/*"
+      "/media/*",
+      "/fragments/*"
     ]
   },
   "vars": {
     "SITE_URL": "https://martinsrealestate.co"
   },
   "triggers": {
-    "crons": ["* * * * *"]
+    "crons": ["*/5 * * * *"]
   },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "martins-blog",
+      // Placeholder for local/tests only. Replace with the real D1 id before production deploy.
       "database_id": "00000000-0000-4000-8000-000000000001",
       "migrations_dir": "migrations"
     }
