@@ -431,6 +431,73 @@ describe("blog publishing system", () => {
     expect(back.status).toBe(200);
   });
 
+  it("does not change the name when the current password is wrong", async () => {
+    const session = await login("admin@martinsrealestate.co", "SuperSecret1!");
+    const before = await env.DB.prepare("SELECT name, password_hash FROM employees WHERE email = ?")
+      .bind("admin@martinsrealestate.co")
+      .first();
+    const failed = await SELF.fetch(`${SITE_ORIGIN}/api/employee/me`, {
+      method: "PATCH",
+      headers: authHeaders(session.cookie),
+      body: JSON.stringify({
+        name: "Should Not Stick",
+        currentPassword: "WrongPassword1!",
+        password: "AnotherSecret1!"
+      })
+    });
+    expect(failed.status).toBe(403);
+    const after = await env.DB.prepare("SELECT name, password_hash FROM employees WHERE email = ?")
+      .bind("admin@martinsrealestate.co")
+      .first();
+    expect(after.name).toBe(before.name);
+    expect(after.name).not.toBe("Should Not Stick");
+    expect(after.password_hash).toBe(before.password_hash);
+    const stillIn = await SELF.fetch(`${SITE_ORIGIN}/api/employee/me`, { headers: { cookie: session.cookie } });
+    expect(stillIn.status).toBe(200);
+    expect((await jsonOf(stillIn)).employee.name).toBe(before.name);
+  });
+
+  it("updates the name without a password and keeps the session", async () => {
+    const session = await login("admin@martinsrealestate.co", "SuperSecret1!");
+    const renamed = await SELF.fetch(`${SITE_ORIGIN}/api/employee/me`, {
+      method: "PATCH",
+      headers: authHeaders(session.cookie),
+      body: JSON.stringify({ name: "Admin Renamed" })
+    });
+    expect(renamed.status).toBe(200);
+    expect((await jsonOf(renamed)).sessionInvalidated).toBe(false);
+    const me = await SELF.fetch(`${SITE_ORIGIN}/api/employee/me`, { headers: { cookie: session.cookie } });
+    expect(me.status).toBe(200);
+    expect((await jsonOf(me)).employee.name).toBe("Admin Renamed");
+    const restore = await SELF.fetch(`${SITE_ORIGIN}/api/employee/me`, {
+      method: "PATCH",
+      headers: authHeaders(session.cookie),
+      body: JSON.stringify({ name: "Admin" })
+    });
+    expect(restore.status).toBe(200);
+  });
+
+  it("rejects a short new password without changing the name", async () => {
+    const session = await login("admin@martinsrealestate.co", "SuperSecret1!");
+    const before = await env.DB.prepare("SELECT name FROM employees WHERE email = ?")
+      .bind("admin@martinsrealestate.co")
+      .first();
+    const failed = await SELF.fetch(`${SITE_ORIGIN}/api/employee/me`, {
+      method: "PATCH",
+      headers: authHeaders(session.cookie),
+      body: JSON.stringify({
+        name: "Short Password Name",
+        currentPassword: "SuperSecret1!",
+        password: "short"
+      })
+    });
+    expect(failed.status).toBe(400);
+    const after = await env.DB.prepare("SELECT name FROM employees WHERE email = ?")
+      .bind("admin@martinsrealestate.co")
+      .first();
+    expect(after.name).toBe(before.name);
+  });
+
   it("invalidates sessions when an employee is deactivated", async () => {
     const admin = await login("admin@martinsrealestate.co", "SuperSecret1!");
     const created = await SELF.fetch(`${SITE_ORIGIN}/api/employee/users`, {

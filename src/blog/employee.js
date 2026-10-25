@@ -275,28 +275,35 @@ async function updateMe(request, env, session) {
   const name = String(body.name || "").trim();
   const currentPassword = String(body.currentPassword || "");
   const nextPassword = String(body.password || "");
-  if (name) {
-    await env.DB.prepare("UPDATE employees SET name = ?, updated_at = ? WHERE id = ?")
-      .bind(name, nowIso(), employee.id)
-      .run();
-  }
-  let sessionInvalidated = false;
+
+  let nextHash = null;
   if (nextPassword) {
     if (nextPassword.length < 10) return error("New password must be at least 10 characters.");
     const row = await env.DB.prepare("SELECT password_hash FROM employees WHERE id = ?").bind(employee.id).first();
-    if (!currentPassword || !(await verifyPassword(currentPassword, row.password_hash))) {
+    if (!row || !currentPassword || !(await verifyPassword(currentPassword, row.password_hash))) {
       return error("Current password is incorrect.", 403);
     }
-    await env.DB.prepare("UPDATE employees SET password_hash = ?, updated_at = ? WHERE id = ?")
-      .bind(await hashPassword(nextPassword), nowIso(), employee.id)
-      .run();
-    await invalidateEmployeeSessions(env, employee.id);
-    sessionInvalidated = true;
+    nextHash = await hashPassword(nextPassword);
   }
+
+  if (name || nextHash) {
+    await env.DB.prepare(
+      `UPDATE employees
+       SET name = COALESCE(?, name),
+           password_hash = COALESCE(?, password_hash),
+           updated_at = ?
+       WHERE id = ?`
+    )
+      .bind(name || null, nextHash, nowIso(), employee.id)
+      .run();
+  }
+
   const updated = await env.DB.prepare("SELECT id, email, name, role FROM employees WHERE id = ?")
     .bind(employee.id)
     .first();
-  if (!sessionInvalidated) return json({ employee: updated, sessionInvalidated: false });
+  if (!nextHash) return json({ employee: updated, sessionInvalidated: false });
+
+  await invalidateEmployeeSessions(env, employee.id);
   const headers = new Headers({
     "Content-Type": "application/json; charset=utf-8",
     "Cache-Control": "no-store",
