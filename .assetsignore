@@ -7,3 +7,10 @@ package-lock.json
 wrangler.jsonc
 worker.js
 *.md
+src
+migrations
+tests
+scripts
+vitest.config.js
+.dev.vars
+.dev.vars.example
